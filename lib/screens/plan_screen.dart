@@ -12,7 +12,7 @@ class PlanScreen extends StatelessWidget {
     return SizedBox.expand(
         child: Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         CategoryWidget(
@@ -42,7 +42,7 @@ class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 20, right: 20),
+      padding: const EdgeInsets.only(left: 20, right: 20),
       width: 370,
       height: 80,
       decoration: BoxDecoration(
