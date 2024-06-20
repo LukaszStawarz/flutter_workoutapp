@@ -40,16 +40,34 @@ class LogInScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 40),
-              const Flexible(
+              Flexible(
                 child: TextInputWidget(
                   hintT: 'Email',
-                  backgroundColor: Color(0xff161818),
+                  backgroundColor: const Color(0xff161818),
+                  keyboardType: TextInputType.emailAddress,
+                  hideText: false,
+                  validator: (p0) {
+                    if (p0 == null || p0.trim().isEmpty || !p0.contains('@')) {
+                      return 'Please enter valid email address.';
+                    }
+                    return null;
+                  },
+                  onSaved: (p0) {},
                 ),
               ),
-              const Flexible(
+              Flexible(
                 child: TextInputWidget(
                   hintT: 'Password',
-                  backgroundColor: Color(0xff161818),
+                  backgroundColor: const Color(0xff161818),
+                  keyboardType: TextInputType.visiblePassword,
+                  hideText: true,
+                  validator: (p0) {
+                    if (p0 == null || p0.trim().length > 6) {
+                      return 'Password must be at least 6 characters long.';
+                    }
+                    return null;
+                  },
+                  onSaved: (p0) {},
                 ),
               ),
               const SizedBox(

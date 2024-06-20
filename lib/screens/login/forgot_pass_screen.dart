@@ -36,28 +36,64 @@ class ForgotPasswordScreen extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 40),
-          const Flexible(
+          Flexible(
             child: TextInputWidget(
               hintT: 'Name',
               backgroundColor: Color(0xff161818),
+              keyboardType: TextInputType.name,
+              hideText: false,
+              validator: (p0) {
+                if (p0 == null || p0.trim().isEmpty) {
+                  return 'Please enter your name.';
+                }
+                return null;
+              },
+              onSaved: (p0) {},
             ),
           ),
-          const Flexible(
+          Flexible(
             child: TextInputWidget(
-              hintT: 'Surname',
+              hintT: 'Last name',
               backgroundColor: Color(0xff161818),
+              keyboardType: TextInputType.name,
+              hideText: false,
+              validator: (p0) {
+                if (p0 == null || p0.trim().isEmpty) {
+                  return 'Please enter your last name.';
+                }
+                return null;
+              },
+              onSaved: (p0) {},
             ),
           ),
-          const Flexible(
+          Flexible(
             child: TextInputWidget(
               hintT: 'Phone number',
               backgroundColor: Color(0xff161818),
+              keyboardType: TextInputType.phone,
+              hideText: false,
+              validator: (p0) {
+                if (p0 == null || p0.isEmpty) {
+                  return 'Please enter your phone number.';
+                }
+                return null;
+              },
+              onSaved: (p0) {},
             ),
           ),
-          const Flexible(
+          Flexible(
             child: TextInputWidget(
               hintT: 'Email',
               backgroundColor: Color(0xff161818),
+              keyboardType: TextInputType.emailAddress,
+              hideText: false,
+              validator: (p0) {
+                if (p0 == null || p0.trim().isEmpty || !p0.contains('@')) {
+                  return 'Please enter valid email address.';
+                }
+                return null;
+              },
+              onSaved: (p0) {},
             ),
           ),
           Text(

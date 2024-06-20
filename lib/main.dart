@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gymapp/screens/login/sign_up_screen.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/screens/login/start_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 // final theme = ThemeData(
 //   useMaterial3: true,
@@ -10,7 +12,10 @@ import 'package:gymapp/screens/login/start_screen.dart';
 //   ),
 // );
 
-void main() {
+void main() async {
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
   runApp(const GymApp());
 }
 
@@ -24,7 +29,9 @@ class GymApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color.fromRGBO(42, 44, 56, 1),
         colorScheme: const ColorScheme.dark().copyWith(background: Colors.red),
       ),
-      home: const MainScreenWidget(), //SignUpScreen()
+      home: //const MainScreenWidget(),
+          //SignUpScreen(),
+          StartScreen(),
     );
   }
 }
