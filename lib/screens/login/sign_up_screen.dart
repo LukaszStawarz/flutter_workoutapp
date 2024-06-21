@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,6 +7,9 @@ import 'package:gymapp/model/flat_text_button.dart';
 import 'package:gymapp/model/textinput.dart';
 import 'package:gymapp/screens/login/forgot_pass_screen.dart';
 import 'package:gymapp/screens/login/log_in_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+final _firebase = FirebaseAuth.instance;
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -16,23 +20,54 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final _form = GlobalKey<FormState>();
-  var _enteretName = '';
-  var _enteretLastName = '';
-  var _enteretEmail = '';
-  var _enteretPhoneNumber = '';
-  var _enteretPassword = '';
+  var _enteredName = '';
+  var _enteredLastName = '';
+  var _enteredEmail = '';
+  var _enteredPhoneNumber = '';
+  var _enteredPassword = '';
 
-  void _submit() {
+  void _submit() async {
     final isValid = _form.currentState!.validate();
     print(isValid);
 
+    if (!isValid) {
+      return;
+    }
+
+    _form.currentState!.save();
+    print(_enteredName);
+    print(_enteredLastName);
+    print(_enteredEmail);
+    print(_enteredPhoneNumber);
+    print(_enteredPassword);
     if (isValid) {
-      _form.currentState!.save();
-      print(_enteretName);
-      print(_enteretLastName);
-      print(_enteretEmail);
-      print(_enteretPhoneNumber);
-      print(_enteretPassword);
+      try {
+        final userCredentials = await _firebase.createUserWithEmailAndPassword(
+            email: _enteredEmail, password: _enteredPassword);
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(userCredentials.user!.uid)
+            .set(
+          {
+            'user name': _enteredName,
+            'user lastname': _enteredLastName,
+            'user email': _enteredEmail,
+            'user phone number': _enteredPhoneNumber,
+          },
+        );
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const LogInScreen()));
+      } on FirebaseAuthException catch (error) {
+        if (error.code == 'email-already-in-use') {
+          //...
+        }
+        ScaffoldMessenger.of(context).clearSnackBars();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(error.message ?? 'Authentication failed.'),
+          ),
+        );
+      }
     }
   }
 
@@ -82,7 +117,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     return null;
                   },
                   onSaved: ((p0) {
-                    _enteretName = p0!;
+                    _enteredName = p0!;
                   }),
                 ),
               ),
@@ -99,7 +134,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     return null;
                   },
                   onSaved: ((p0) {
-                    _enteretLastName = p0!;
+                    _enteredLastName = p0!;
                   }),
                 ),
               ),
@@ -116,7 +151,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     return null;
                   },
                   onSaved: ((p0) {
-                    _enteretPhoneNumber = p0!;
+                    _enteredPhoneNumber = p0!;
                   }),
                 ),
               ),
@@ -135,7 +170,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       return null;
                     },
                     onSaved: ((p0) {
-                      _enteretEmail = p0!;
+                      _enteredEmail = p0!;
                     })),
               ),
               Flexible(
@@ -151,7 +186,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     return null;
                   },
                   onSaved: ((p0) {
-                    _enteretPassword = p0!;
+                    _enteredPassword = p0!;
                   }),
                 ),
               ),
@@ -174,10 +209,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               ButtonBP(
                 onClick: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => const LogInScreen()));
                   _submit();
                 },
                 buttonText: 'Sign Up',

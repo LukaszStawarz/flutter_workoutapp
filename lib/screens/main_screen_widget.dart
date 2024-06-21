@@ -7,14 +7,14 @@ import 'package:gymapp/screens/home_screen.dart';
 import 'package:gymapp/screens/plan_screen.dart';
 import 'package:gymapp/screens/profile_screen.dart';
 
-class MainScreenWidget extends StatefulWidget {
-  const MainScreenWidget({super.key});
+class HomeScreenWidget extends StatefulWidget {
+  const HomeScreenWidget({super.key});
 
   @override
-  State<MainScreenWidget> createState() => _MainScreenWidgetState();
+  State<HomeScreenWidget> createState() => _HomeScreenWidgetState();
 }
 
-class _MainScreenWidgetState extends State<MainScreenWidget> {
+class _HomeScreenWidgetState extends State<HomeScreenWidget> {
   int currentPageIndex = 2;
   final List<Color> gradientColors = [
     const Color(0xff5328D4),

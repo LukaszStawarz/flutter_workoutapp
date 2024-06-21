@@ -59,4 +59,5 @@ class DefaultFirebaseOptions {
     projectId: 'gymappflutter-c95ce',
     storageBucket: 'gymappflutter-c95ce.appspot.com',
   );
+
 }
