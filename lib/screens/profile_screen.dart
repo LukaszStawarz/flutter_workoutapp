@@ -1,11 +1,12 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/gen/assets.gen.dart';
-import 'package:gymapp/model/button_bp.dart';
+import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/screens/login/log_in_screen.dart';
 import 'package:gymapp/screens/profile_sub_screens/achievements_screen.dart';
 import 'package:gymapp/screens/profile_sub_screens/contact_us_screen.dart';
@@ -163,6 +164,7 @@ class ProfileScreen extends StatelessWidget {
                 child: ButtonBP(
                   buttonText: 'Log Out',
                   onClick: () {
+                    FirebaseAuth.instance.signOut();
                     _selectedLogOutButton();
                   },
                   isBig: false,

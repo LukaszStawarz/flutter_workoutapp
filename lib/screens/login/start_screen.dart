@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gymapp/model/button_bp.dart';
+import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/screens/login/log_in_screen.dart';
 
 class StartScreen extends StatelessWidget {

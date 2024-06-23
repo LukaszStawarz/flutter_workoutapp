@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gymapp/model/button_bp.dart';
-import 'package:gymapp/model/flat_text_button.dart';
+import 'package:gymapp/widgets/button_bp.dart';
+import 'package:gymapp/widgets/flat_text_button.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
-import 'package:gymapp/model/textinput.dart';
+import 'package:gymapp/widgets/textinput.dart';
 import 'package:gymapp/screens/login/forgot_pass_screen.dart';
 import 'package:gymapp/screens/login/sign_up_screen.dart';
 
@@ -35,12 +35,19 @@ class _LogInScreenState extends State<LogInScreen> {
     if (isValid) {
       try {
         final userCredentials = await _firebase.signInWithEmailAndPassword(
-            email: _enteretEmail, password: _enteretPassword);
+          email: _enteretEmail,
+          password: _enteretPassword,
+        );
         print(userCredentials);
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const HomeScreenWidget()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeScreenWidget(),
+          ),
+        );
       } on FirebaseAuthException catch (error) {
         String errorMessage;
+
         if (error.code == 'invalid-email') {
           errorMessage = 'Entered email is invalid.';
         } else if (error.code == 'user-not-found') {
@@ -54,7 +61,7 @@ class _LogInScreenState extends State<LogInScreen> {
         ScaffoldMessenger.of(context).clearSnackBars();
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(error.message ?? 'Authentication failed.'),
+            content: Text(errorMessage),
           ),
         );
       }

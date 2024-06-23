@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gymapp/model/button_bp.dart';
-import 'package:gymapp/model/textinput.dart';
+import 'package:gymapp/widgets/button_bp.dart';
+import 'package:gymapp/widgets/textinput.dart';
 import 'package:gymapp/screens/login/remind_pass_screen.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {

@@ -23,14 +23,38 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
   @override
   Widget build(BuildContext context) {
     //final ThemeData theme = Theme.of(context);
+    Widget titleWidget = const Text('');
+    if (currentPageIndex == 0) {
+      titleWidget = const Text(
+        'Profile',
+        style: TextStyle(color: Color(0xffACA3A5)),
+      );
+    } else if (currentPageIndex == 1) {
+      titleWidget = const Text(
+        'History',
+        style: TextStyle(color: Color(0xffACA3A5)),
+      );
+    } else if (currentPageIndex == 2) {
+      titleWidget = const Text(
+        'Home',
+        style: TextStyle(color: Color(0xffACA3A5)),
+      );
+    } else if (currentPageIndex == 3) {
+      titleWidget = const Text(
+        'Plans',
+        style: TextStyle(color: Color(0xffACA3A5)),
+      );
+    } else if (currentPageIndex == 4) {
+      titleWidget = const Text(
+        'Exercise',
+        style: TextStyle(color: Color(0xffACA3A5)),
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 13, 14, 14),
-        title: const Text(
-          'Home',
-          style: TextStyle(color: Color(0xffACA3A5)),
-        ),
+        title: titleWidget,
       ),
       bottomNavigationBar: NavigationBar(
         backgroundColor: const Color(0xff161818),
