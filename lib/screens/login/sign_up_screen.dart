@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/widgets/flat_text_button.dart';
@@ -106,7 +105,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Flexible(
                 child: TextInputWidget(
                   hintT: 'Name',
-                  backgroundColor: Color(0xff161818),
+                  backgroundColor: const Color(0xff161818),
                   keyboardType: TextInputType.name,
                   hideText: false,
                   validator: (p0) {
@@ -124,7 +123,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Flexible(
                 child: TextInputWidget(
                   hintT: 'Last name',
-                  backgroundColor: Color(0xff161818),
+                  backgroundColor: const Color(0xff161818),
                   keyboardType: TextInputType.name,
                   hideText: false,
                   validator: (p0) {
@@ -141,7 +140,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Flexible(
                 child: TextInputWidget(
                   hintT: 'Phone number',
-                  backgroundColor: Color(0xff161818),
+                  backgroundColor: const Color(0xff161818),
                   keyboardType: TextInputType.phone,
                   hideText: false,
                   validator: (p0) {
@@ -158,7 +157,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Flexible(
                 child: TextInputWidget(
                     hintT: 'Email',
-                    backgroundColor: Color(0xff161818),
+                    backgroundColor: const Color(0xff161818),
                     keyboardType: TextInputType.emailAddress,
                     hideText: false,
                     validator: (p0) {
@@ -176,7 +175,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Flexible(
                 child: TextInputWidget(
                   hintT: 'Password',
-                  backgroundColor: Color(0xff161818),
+                  backgroundColor: const Color(0xff161818),
                   keyboardType: TextInputType.text,
                   hideText: true,
                   validator: (p0) {

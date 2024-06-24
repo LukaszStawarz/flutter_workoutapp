@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gymapp/providers/exercise_provider.dart';
 import 'package:gymapp/providers/plans_provider.dart';
-import 'package:gymapp/screens/login/sign_up_screen.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/screens/login/start_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:gymapp/screens/plan_screen.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
@@ -30,7 +29,12 @@ class GymApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => PlanProvider()..getPlans())
+        ChangeNotifierProvider(
+          create: (_) => PlanProvider()..getPlans(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => ExerciseProvider()..getExercises(),
+        ),
       ],
       child: MaterialApp(
           theme: ThemeData(
@@ -41,7 +45,7 @@ class GymApp extends StatelessWidget {
           home: //const MainScreenWidget(),
               //SignUpScreen(),
               //StartScreen(),
-              HomeScreenWidget()
+              const HomeScreenWidget()
           //PlanScreen()
           ),
     );

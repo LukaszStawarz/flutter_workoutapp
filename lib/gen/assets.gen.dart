@@ -46,6 +46,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/chick.png
   AssetGenImage get chick => const AssetGenImage('assets/images/chick.png');
 
+  /// File path: assets/images/plan_background_image.jpg
+  AssetGenImage get planBackgroundImage =>
+      const AssetGenImage('assets/images/plan_background_image.jpg');
+
   /// File path: assets/images/profile_image.png
   AssetGenImage get profileImage =>
       const AssetGenImage('assets/images/profile_image.png');
@@ -61,6 +65,7 @@ class $AssetsImagesGen {
         categoryWup,
         categoryYoga,
         chick,
+        planBackgroundImage,
         profileImage
       ];
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/widgets/textinput.dart';
-import 'package:gymapp/screens/login/remind_pass_screen.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -64,7 +63,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             Flexible(
               child: TextInputWidget(
                 hintT: 'Name',
-                backgroundColor: Color(0xff161818),
+                backgroundColor: const Color(0xff161818),
                 keyboardType: TextInputType.name,
                 hideText: false,
                 validator: (p0) {
@@ -81,7 +80,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             Flexible(
               child: TextInputWidget(
                 hintT: 'Last name',
-                backgroundColor: Color(0xff161818),
+                backgroundColor: const Color(0xff161818),
                 keyboardType: TextInputType.name,
                 hideText: false,
                 validator: (p0) {
@@ -98,7 +97,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             Flexible(
               child: TextInputWidget(
                 hintT: 'Phone number',
-                backgroundColor: Color(0xff161818),
+                backgroundColor: const Color(0xff161818),
                 keyboardType: TextInputType.phone,
                 hideText: false,
                 validator: (p0) {
@@ -115,7 +114,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             Flexible(
               child: TextInputWidget(
                 hintT: 'Email',
-                backgroundColor: Color(0xff161818),
+                backgroundColor: const Color(0xff161818),
                 keyboardType: TextInputType.emailAddress,
                 hideText: false,
                 validator: (p0) {
