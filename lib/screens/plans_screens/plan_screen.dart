@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gymapp/models/plans.dart';
 import 'package:gymapp/providers/plans_provider.dart';
-import 'package:gymapp/screens/selected_plan_screen.dart';
+import 'package:gymapp/screens/plans_screens/selected_plan_screen.dart';
 import 'package:gymapp/widgets/plan_widget.dart';
 import 'package:provider/provider.dart';
 

@@ -8,11 +8,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/gen/assets.gen.dart';
 import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/screens/login/log_in_screen.dart';
-import 'package:gymapp/screens/profile_sub_screens/achievements_screen.dart';
-import 'package:gymapp/screens/profile_sub_screens/contact_us_screen.dart';
-import 'package:gymapp/screens/profile_sub_screens/personal_data_screen.dart';
-import 'package:gymapp/screens/profile_sub_screens/privacy_policy_screen.dart';
-import 'package:gymapp/screens/profile_sub_screens/workout_progress_screen.dart';
+import 'package:gymapp/screens/profile_screens/achievements_screen.dart';
+import 'package:gymapp/screens/profile_screens/contact_us_screen.dart';
+import 'package:gymapp/screens/profile_screens/personal_data_screen.dart';
+import 'package:gymapp/screens/profile_screens/privacy_policy_screen.dart';
+import 'package:gymapp/screens/profile_screens/workout_progress_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({

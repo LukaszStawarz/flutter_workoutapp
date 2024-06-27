@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gymapp/gen/assets.gen.dart';
-import 'package:gymapp/screens/exercise_screen.dart';
-import 'package:gymapp/screens/history_screen.dart';
-import 'package:gymapp/screens/home_screen.dart';
-import 'package:gymapp/screens/plan_screen.dart';
-import 'package:gymapp/screens/profile_screen.dart';
+import 'package:gymapp/screens/exercise_screens/exercise_screen.dart';
+import 'package:gymapp/screens/todo_screens/history_screen.dart';
+import 'package:gymapp/screens/todo_screens/home_screen.dart';
+import 'package:gymapp/screens/plans_screens/plan_screen.dart';
+import 'package:gymapp/screens/profile_screens/profile_screen.dart';
 
 class HomeScreenWidget extends StatefulWidget {
   const HomeScreenWidget({super.key});
