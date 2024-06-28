@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/models/breathing.dart';
 import 'package:gymapp/models/cardio.dart';
-import 'package:gymapp/models/exercises.dart';
 import 'package:gymapp/models/strength.dart';
 import 'package:gymapp/models/warmup.dart';
 import 'package:gymapp/models/yoga.dart';
@@ -174,7 +173,8 @@ class ExerciseScreen extends StatelessWidget {
 }
 
 class ExpansionTileWidget extends StatelessWidget {
-  const ExpansionTileWidget({required this.title, required this.lista});
+  const ExpansionTileWidget(
+      {super.key, required this.title, required this.lista});
   final String title;
   final List<Widget> lista;
   @override

@@ -37,17 +37,17 @@ class GymApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-          theme: ThemeData(
-            scaffoldBackgroundColor: const Color.fromRGBO(42, 44, 56, 1),
-            colorScheme:
-                const ColorScheme.dark().copyWith(background: Colors.red),
-          ),
-          home: //const MainScreenWidget(),
-              //SignUpScreen(),
-              //StartScreen(),
-              const HomeScreenWidget()
-          //PlanScreen()
-          ),
+        theme: ThemeData(
+          scaffoldBackgroundColor: const Color.fromRGBO(42, 44, 56, 1),
+          colorScheme:
+              const ColorScheme.dark().copyWith(background: Colors.red),
+        ),
+        home: //const MainScreenWidget(),
+            //SignUpScreen(),
+            const StartScreen(),
+        //const HomeScreenWidget()
+        //PlanScreen()
+      ),
     );
   }
 }

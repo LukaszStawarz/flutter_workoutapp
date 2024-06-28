@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/models/plans.dart';
+import 'package:gymapp/screens/plans_screens/plan_details.dart';
 
 class SelectedPlanScreen extends StatelessWidget {
   const SelectedPlanScreen({super.key, required this.plan});
@@ -72,7 +73,14 @@ class WorkoutPlanWidget extends StatelessWidget {
       ),
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => PlanDetailsScreen(
+                    plan: plan,
+                    planTitle: planTitle,
+                    image: image,
+                  )));
+        },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

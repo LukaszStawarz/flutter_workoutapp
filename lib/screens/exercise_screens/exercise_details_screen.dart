@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gymapp/models/breathing.dart';
-import 'package:gymapp/screens/exercise_screens/exercise_screen.dart';
 
 class ExerciseDetailsScreen extends StatelessWidget {
   const ExerciseDetailsScreen(

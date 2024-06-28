@@ -19,14 +19,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
   void _submit() {
     final isValid = _form.currentState!.validate();
-    print(isValid);
+    //print(isValid);
 
     if (isValid) {
       _form.currentState!.save();
-      print(_enteretName);
-      print(_enteretLastName);
-      print(_enteretEmail);
-      print(_enteretPhoneNumber);
+      // print(_enteretName);
+      // print(_enteretLastName);
+      // print(_enteretEmail);
+      // print(_enteretPhoneNumber);
     }
   }
 

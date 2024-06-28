@@ -53,8 +53,10 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: null,
         backgroundColor: const Color.fromARGB(255, 13, 14, 14),
         title: titleWidget,
+        automaticallyImplyLeading: false,
       ),
       bottomNavigationBar: NavigationBar(
         backgroundColor: const Color(0xff161818),

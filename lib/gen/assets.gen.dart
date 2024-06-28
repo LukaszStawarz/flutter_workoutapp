@@ -16,6 +16,10 @@ class $AssetsImagesGen {
   AssetGenImage get exerciseExampleImage =>
       const AssetGenImage('assets/images/Exercise_example_image.png');
 
+  /// File path: assets/images/Exercise_example_video.png
+  AssetGenImage get exerciseExampleVideo =>
+      const AssetGenImage('assets/images/Exercise_example_video.png');
+
   /// File path: assets/images/Logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/Logo.png');
 
@@ -57,6 +61,7 @@ class $AssetsImagesGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         exerciseExampleImage,
+        exerciseExampleVideo,
         logo,
         categoryBrth,
         categoryCardio,
