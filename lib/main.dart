@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gymapp/providers/exercise_provider.dart';
 import 'package:gymapp/providers/plans_provider.dart';
+import 'package:gymapp/screens/login/sign_up_details_screen.dart';
+import 'package:gymapp/screens/login/sign_up_screen.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/screens/login/start_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -44,7 +46,8 @@ class GymApp extends StatelessWidget {
         ),
         home: //const MainScreenWidget(),
             //SignUpScreen(),
-            const StartScreen(),
+            //const StartScreen(),
+            const SignUpDetailsScreen(),
         //const HomeScreenWidget()
         //PlanScreen()
       ),

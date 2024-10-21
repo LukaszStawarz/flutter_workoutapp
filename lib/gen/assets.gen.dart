@@ -50,6 +50,21 @@ class $AssetsImagesGen {
   /// File path: assets/images/chick.png
   AssetGenImage get chick => const AssetGenImage('assets/images/chick.png');
 
+  /// File path: assets/images/contact_bg.png
+  AssetGenImage get contactBg =>
+      const AssetGenImage('assets/images/contact_bg.png');
+
+  /// File path: assets/images/discord.png
+  AssetGenImage get discord => const AssetGenImage('assets/images/discord.png');
+
+  /// File path: assets/images/instagram.png
+  AssetGenImage get instagram =>
+      const AssetGenImage('assets/images/instagram.png');
+
+  /// File path: assets/images/lady_image.png
+  AssetGenImage get ladyImage =>
+      const AssetGenImage('assets/images/lady_image.png');
+
   /// File path: assets/images/plan_background_image.jpg
   AssetGenImage get planBackgroundImage =>
       const AssetGenImage('assets/images/plan_background_image.jpg');
@@ -57,6 +72,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/profile_image.png
   AssetGenImage get profileImage =>
       const AssetGenImage('assets/images/profile_image.png');
+
+  /// File path: assets/images/twiter.png
+  AssetGenImage get twiter => const AssetGenImage('assets/images/twiter.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
@@ -70,8 +88,13 @@ class $AssetsImagesGen {
         categoryWup,
         categoryYoga,
         chick,
+        contactBg,
+        discord,
+        instagram,
+        ladyImage,
         planBackgroundImage,
-        profileImage
+        profileImage,
+        twiter
       ];
 }
 
@@ -95,6 +118,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/home_icon.svg
   String get homeIcon => 'assets/svg/home_icon.svg';
+
+  /// File path: assets/svg/lady_image.svg
+  String get ladyImage => 'assets/svg/lady_image.svg';
 
   /// File path: assets/svg/personal_data_icon.svg
   String get personalDataIcon => 'assets/svg/personal_data_icon.svg';
@@ -122,6 +148,7 @@ class $AssetsSvgGen {
         exerciseIcon,
         historyIcon,
         homeIcon,
+        ladyImage,
         personalDataIcon,
         plansIcon,
         privacyPolicyIcon,
