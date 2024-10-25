@@ -19,29 +19,6 @@ class ButtonBP extends StatelessWidget {
     const Color(0xff7632D0)
   ];
 
-  // factory ButtonBP.smallRed({
-  //   required String buttonText,
-  //   required VoidCallback onClick,
-  // }) {
-  //   return ButtonBP(
-  //     buttonText: buttonText,
-  //     onClick: onClick,
-  //     color: Colors.red,
-  //     isBig: false,
-  //   );
-  // }
-
-  // factory ButtonBP.bigRed({
-  //   required String buttonText,
-  //   required VoidCallback onClick,
-  // }) {
-  //   return ButtonBP(
-  //     buttonText: buttonText,
-  //     onClick: onClick,
-  //     color: Colors.red,
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -60,14 +37,6 @@ class ButtonBP extends StatelessWidget {
             onPressed: onClick,
             style:
                 ElevatedButton.styleFrom(backgroundColor: Colors.transparent),
-            // style: ButtonStyle(
-            //   backgroundColor: MaterialStatePropertyAll<Color>(
-            //     color ??
-            //         const Color(
-            //           0xff5428d4,
-            //         ),
-            //   ),
-            // ),
             child: Text(
               buttonText,
               style: GoogleFonts.poppins(

@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gymapp/main.dart';
+import 'package:gymapp/providers/user_data_provider.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/widgets/textinput.dart';
+import 'package:provider/provider.dart';
 
 class SignUpDetailsScreen extends StatefulWidget {
   const SignUpDetailsScreen({super.key});
@@ -15,14 +18,25 @@ class SignUpDetailsScreen extends StatefulWidget {
 }
 
 class _SignUpDetailsScreenState extends State<SignUpDetailsScreen> {
+  late final UserDataProvider userDataProvider;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    userDataProvider = context.read<UserDataProvider>();
+  }
+
+  final _formKey = GlobalKey<FormState>();
   var _enteredDob = '';
   var _enteredHeight = '';
   var _enteredWeight = '';
-  String? _gender;
+  // String? _gender;
 
-  void _saveGender(String? value) {
-    _gender = value;
-  }
+  String _selectedGender = '';
+  // void _saveGender(String? value) {
+  //   _gender = value;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -31,149 +45,164 @@ class _SignUpDetailsScreenState extends State<SignUpDetailsScreen> {
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Image.asset(
-                'assets/images/lady_image.png',
-                width: 350,
-                height: 350,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Image.asset(
+                  'assets/images/lady_image.png',
+                  width: 350,
+                  height: 350,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(
+                    style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                    ),
+                    "Let's complete your profile"),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'It will help us to know more about you!',
                   style: GoogleFonts.poppins(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
-                  ),
-                  "Let's complete your profile"),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                'It will help us to know more about you!',
-                style: GoogleFonts.poppins(
-                    color: const Color.fromARGB(255, 136, 133, 134),
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Row(
-                children: [
-                  const Icon(
-                    Icons.people_alt_outlined,
-                    color: Color.fromARGB(255, 136, 133, 134),
-                  ),
-                  Flexible(
-                    child: GenderPickerWidget(
-                      hintT: 'Gender',
-                      backgroundColor: const Color(0xff161818),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Gender';
-                        }
-                        return null;
-                      },
-                      onSaved: _saveGender,
+                      color: const Color.fromARGB(255, 136, 133, 134),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.people_alt_outlined,
+                      color: Color.fromARGB(255, 136, 133, 134),
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                //date of birth
-                children: [
-                  const Icon(
-                    Icons.calendar_month,
-                    color: Color.fromARGB(255, 136, 133, 134),
-                  ),
-                  Flexible(
-                    child: DatePickerWidget(
-                      hintT: 'Date of birth',
-                      backgroundColor: const Color(0xff161818),
-                      hideText: false,
-                      validator: (p0) {
-                        if (p0 == null || p0.trim().isEmpty) {
-                          return 'Please enter Date of birth';
-                        }
-                        return null;
-                      },
-                      onSaved: ((p0) {
-                        _enteredDob = p0!;
-                      }),
+                    Flexible(
+                      child: GenderPickerWidget(
+                        hintT: 'Gender',
+                        backgroundColor: const Color(0xff161818),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Gender';
+                          }
+                          return null;
+                        },
+                        onSaved: ((p0) {
+                          _selectedGender = p0!;
+                        }),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                //Weight
-                children: [
-                  const Icon(
-                    Icons.monitor_weight_outlined,
-                    color: Color.fromARGB(255, 136, 133, 134),
-                    size: 28,
-                  ),
-                  Flexible(
-                    child: TextInputWidget(
-                      hintT: 'Your Weight (kg)',
-                      backgroundColor: const Color(0xff161818),
-                      keyboardType: TextInputType.emailAddress,
-                      hideText: false,
-                      validator: (p0) {
-                        if (p0 == null || p0.trim().isEmpty) {
-                          return 'Please enter your weight';
-                        }
-                        return null;
-                      },
-                      onSaved: ((p0) {
-                        _enteredWeight = p0!;
-                      }),
+                  ],
+                ),
+                Row(
+                  //date of birth
+                  children: [
+                    const Icon(
+                      Icons.calendar_month,
+                      color: Color.fromARGB(255, 136, 133, 134),
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                //Height
-                children: [
-                  const Icon(
-                    Icons.height,
-                    color: Color.fromARGB(255, 136, 133, 134),
-                    size: 28,
-                  ),
-                  Flexible(
-                    child: TextInputWidget(
-                      hintT: 'Your Height (cm)',
-                      backgroundColor: const Color(0xff161818),
-                      keyboardType: TextInputType.emailAddress,
-                      hideText: false,
-                      validator: (p0) {
-                        if (p0 == null || p0.trim().isEmpty) {
-                          return 'Please enter your height';
-                        }
-                        return null;
-                      },
-                      onSaved: ((p0) {
-                        _enteredHeight = p0!;
-                      }),
+                    Flexible(
+                      child: DatePickerWidget(
+                        hintT: 'Date of birth',
+                        backgroundColor: const Color(0xff161818),
+                        hideText: false,
+                        validator: (p0) {
+                          if (p0 == null || p0.trim().isEmpty) {
+                            return 'Please enter Date of birth';
+                          }
+                          return null;
+                        },
+                        onSaved: ((p0) {
+                          _enteredDob = p0!;
+                        }),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              ButtonBP(
-                buttonText: 'Finish',
-                onClick: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const HomeScreenWidget()),
-                  );
-                },
-              ),
-            ],
+                  ],
+                ),
+                Row(
+                  //Weight
+                  children: [
+                    const Icon(
+                      Icons.monitor_weight_outlined,
+                      color: Color.fromARGB(255, 136, 133, 134),
+                      size: 28,
+                    ),
+                    Flexible(
+                      child: TextInputWidget(
+                        hintT: 'Your Weight (kg)',
+                        backgroundColor: const Color(0xff161818),
+                        keyboardType: TextInputType.number,
+                        hideText: false,
+                        validator: (p0) {
+                          if (p0 == null || p0.trim().isEmpty) {
+                            return 'Please enter your weight';
+                          }
+                          return null;
+                        },
+                        onSaved: ((p0) {
+                          _enteredWeight = p0!;
+                        }),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  //Height
+                  children: [
+                    const Icon(
+                      Icons.height,
+                      color: Color.fromARGB(255, 136, 133, 134),
+                      size: 28,
+                    ),
+                    Flexible(
+                      child: TextInputWidget(
+                        hintT: 'Your Height (cm)',
+                        backgroundColor: const Color(0xff161818),
+                        keyboardType: TextInputType.number,
+                        hideText: false,
+                        validator: (p0) {
+                          if (p0 == null || p0.trim().isEmpty) {
+                            return 'Please enter your height';
+                          }
+                          return null;
+                        },
+                        onSaved: ((p0) {
+                          _enteredHeight = p0!;
+                        }),
+                      ),
+                    ),
+                  ],
+                ),
+                ButtonBP(
+                  buttonText: 'Finish',
+                  onClick: () {
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState!.save();
+                      userDataProvider.updateUserData(
+                        gender: _selectedGender,
+                        dateTime: _enteredDob.toString(),
+                        weight: _enteredWeight,
+                        height: _enteredHeight,
+                      );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreenWidget(),
+                        ),
+                      );
+                    }
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

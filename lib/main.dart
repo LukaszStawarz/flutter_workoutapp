@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:gymapp/providers/exercise_provider.dart';
 import 'package:gymapp/providers/plans_provider.dart';
+import 'package:gymapp/providers/user_data_getter_provider.dart';
+import 'package:gymapp/providers/user_data_provider.dart';
 import 'package:gymapp/screens/login/sign_up_details_screen.dart';
 import 'package:gymapp/screens/login/sign_up_screen.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/screens/login/start_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:gymapp/screens/plans_screens/plan_details.dart';
+import 'package:gymapp/screens/plans_screens/plan_screen.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
@@ -37,6 +41,12 @@ class GymApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => ExerciseProvider()..getExercises(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => UserDataProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => UserDataGetterProvider(),
+        ),
       ],
       child: MaterialApp(
         theme: ThemeData(
@@ -47,9 +57,9 @@ class GymApp extends StatelessWidget {
         home: //const MainScreenWidget(),
             //SignUpScreen(),
             //const StartScreen(),
-            const SignUpDetailsScreen(),
-        //const HomeScreenWidget()
-        //PlanScreen()
+            // const SignUpDetailsScreen(),
+            //const HomeScreenWidget()
+            PlanScreen(),
       ),
     );
   }

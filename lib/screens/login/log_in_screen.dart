@@ -1,12 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gymapp/providers/user_data_provider.dart';
+import 'package:gymapp/screens/login/sign_up_details_screen.dart';
 import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/widgets/flat_text_button.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/widgets/textinput.dart';
 import 'package:gymapp/screens/login/forgot_pass_screen.dart';
 import 'package:gymapp/screens/login/sign_up_screen.dart';
+import 'package:provider/provider.dart';
 
 final _firebase = FirebaseAuth.instance;
 
@@ -18,10 +21,32 @@ class LogInScreen extends StatefulWidget {
 }
 
 class _LogInScreenState extends State<LogInScreen> {
+  late final UserDataProvider _dataProvider;
   final _form = GlobalKey<FormState>();
 
   var _enteretEmail = '';
   var _enteretPassword = '';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _dataProvider = context.read<UserDataProvider>();
+    if (_dataProvider.userCredential != null) {
+      // Wywoła metode wtedy gdy ekran sie zbuilduje
+      WidgetsBinding.instance.addPostFrameCallback(
+        (timeStamp) {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return const SignUpDetailsScreen();
+              },
+            ),
+          );
+        },
+      );
+    }
+  }
 
   void _submit() async {
     final isValid = _form.currentState!.validate();

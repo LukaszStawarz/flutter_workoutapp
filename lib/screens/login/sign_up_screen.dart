@@ -1,12 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gymapp/main.dart';
+import 'package:gymapp/providers/user_data_provider.dart';
 import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/widgets/flat_text_button.dart';
 import 'package:gymapp/widgets/textinput.dart';
 import 'package:gymapp/screens/login/forgot_pass_screen.dart';
 import 'package:gymapp/screens/login/log_in_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
 
 final _firebase = FirebaseAuth.instance;
 
@@ -18,6 +21,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  late final UserDataProvider _userDataProvider;
   final _form = GlobalKey<FormState>();
   var _enteredName = '';
   var _enteredLastName = '';
@@ -25,7 +29,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
   var _enteredPhoneNumber = '';
   var _enteredPassword = '';
 
-  void _submit() async {
+  @override
+  void initState() {
+    super.initState();
+    _userDataProvider = context.read<UserDataProvider>();
+  }
+
+  Future<void> _submit() async {
     final isValid = _form.currentState!.validate();
     print(isValid);
 
@@ -41,21 +51,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
     print(_enteredPassword);
     if (isValid) {
       try {
-        final userCredentials = await _firebase.createUserWithEmailAndPassword(
-            email: _enteredEmail, password: _enteredPassword);
-        await FirebaseFirestore.instance
-            .collection('users')
-            .doc(userCredentials.user!.uid)
-            .set(
-          {
-            'user name': _enteredName,
-            'user lastname': _enteredLastName,
-            'user email': _enteredEmail,
-            'user phone number': _enteredPhoneNumber,
-          },
+        final userCredentials = await _userDataProvider.createAccount(
+          email: _enteredEmail,
+          password: _enteredPassword,
+          lastName: _enteredLastName,
+          name: _enteredName,
+          phone: _enteredPhoneNumber,
         );
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const LogInScreen()));
+        if (mounted) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const LogInScreen(),
+            ),
+          );
+        }
       } on FirebaseAuthException catch (error) {
         if (error.code == 'email-already-in-use') {
           //...

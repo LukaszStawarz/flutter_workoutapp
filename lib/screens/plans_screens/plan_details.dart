@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/models/plans.dart';
+import 'package:gymapp/screens/plans_screens/started_plan_screen.dart';
 
 class PlanDetailsScreen extends StatelessWidget {
   const PlanDetailsScreen(
@@ -63,6 +64,19 @@ class PlanDetailsScreen extends StatelessWidget {
               planTitle: planTitle,
               plan: plan,
             ),
+            const SizedBox(
+              height: 30,
+            ),
+            StartButton(onClick: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => StartedPlanScreen(
+                    plan: plan,
+                    planTitle: planTitle,
+                  ),
+                ),
+              );
+            }),
           ],
         ),
       ),
@@ -233,6 +247,50 @@ class PlanDetails extends StatelessWidget {
               ],
             ),
         ],
+      ),
+    );
+  }
+}
+
+class StartButton extends StatelessWidget {
+  StartButton({
+    super.key,
+    required this.onClick,
+  });
+  final void Function() onClick;
+
+  final List<Color> gradientColors = [
+    const Color(0xff5328D4),
+    const Color(0xff7632D0)
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: SizedBox(
+        width: 100,
+        height: 100,
+        child: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: gradientColors,
+                  begin: Alignment.centerRight,
+                  end: Alignment.centerLeft),
+              borderRadius: BorderRadius.circular(50)),
+          child: ElevatedButton(
+            onPressed: onClick,
+            style:
+                ElevatedButton.styleFrom(backgroundColor: Colors.transparent),
+            child: Text(
+              'Start',
+              style: GoogleFonts.poppins(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
