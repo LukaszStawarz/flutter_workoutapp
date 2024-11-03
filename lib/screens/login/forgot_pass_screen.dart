@@ -12,9 +12,13 @@ class ForgotPasswordScreen extends StatefulWidget {
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final _form = GlobalKey<FormState>();
+  // ignore: unused_field
   var _enteretName = '';
+  // ignore: unused_field
   var _enteretLastName = '';
+  // ignore: unused_field
   var _enteretEmail = '';
+  // ignore: unused_field
   var _enteretPhoneNumber = '';
 
   void _submit() {

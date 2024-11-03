@@ -1,82 +1,111 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/models/plans.dart';
+import 'package:gymapp/models/subplan.dart';
+import 'package:gymapp/models/user_exercise.dart';
+import 'package:gymapp/providers/user_exercise_provider.dart';
 import 'package:gymapp/screens/plans_screens/started_plan_screen.dart';
+import 'package:provider/provider.dart';
 
 class PlanDetailsScreen extends StatelessWidget {
-  const PlanDetailsScreen(
-      {super.key,
-      required this.planTitle,
-      required this.image,
-      required this.plan});
+  const PlanDetailsScreen({
+    super.key,
+    required this.subplan,
+    required this.planId,
+  });
 
-  final String planTitle;
-  final String image;
-  final Plan plan;
+  final SubPlan subplan;
+  final String planId;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:
-            Text(planTitle, style: const TextStyle(color: Color(0xffACA3A5))),
+        title: Text(
+          subplan.planTitle,
+          style: const TextStyle(
+            color: Color(0xffACA3A5),
+          ),
+        ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: const EdgeInsets.only(bottom: 15),
         child: Column(
           children: [
-            Hero(
-              tag: image,
-              child: Container(
-                padding: const EdgeInsets.only(left: 20, right: 20),
-                width: 370,
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                    image: NetworkImage(image),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      planTitle,
-                      style: GoogleFonts.poppins(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 30,
+            Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(25.0),
+                  child: Column(
+                    children: [
+                      Hero(
+                        tag: subplan.image,
+                        child: Container(
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                          width: 370,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                              opacity: 0.6,
+                              image: NetworkImage(subplan.image),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                subplan.planTitle,
+                                style: GoogleFonts.poppins(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 30,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      DescriptionWidget(
+                        description: subplan.description,
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      TimeWidget(
+                        plan: subplan,
+                      ),
+                      PlanDetails(
+                        subplan: subplan,
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-            PlanDetails(
-              plan: plan,
-              planTitle: planTitle,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            TimeWidget(
-              planTitle: planTitle,
-              plan: plan,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            StartButton(onClick: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => StartedPlanScreen(
-                    plan: plan,
-                    planTitle: planTitle,
+            StartButton(
+              onClick: () {
+                context
+                    .read<UserExerciseProvider>()
+                    .startExercise(planId: planId, subPlanIndex: subplan.index);
+
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => StartedPlanScreen(
+                      plan: subplan,
+                    ),
                   ),
-                ),
-              );
-            }),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -88,16 +117,15 @@ class PlanDetailsScreen extends StatelessWidget {
 class TimeWidget extends StatelessWidget {
   TimeWidget({
     super.key,
-    required this.planTitle,
     required this.plan,
   });
   final List<Color> gradientColors = [
-    const Color(0xff5328D4),
-    const Color(0xff7632D0)
+    const Color(0xff5328D4).withOpacity(0.4),
+    const Color(0xff7632D0).withOpacity(0.4),
   ];
-  final String planTitle;
-  final Plan plan;
+  final SubPlan plan;
   String? time;
+
   @override
   Widget build(BuildContext context) {
     // var ex1;
@@ -105,87 +133,60 @@ class TimeWidget extends StatelessWidget {
 
     // var ex3;
     return Container(
-        padding: const EdgeInsets.only(left: 20, right: 20),
-        width: 370,
-        height: 80,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            gradient: LinearGradient(colors: gradientColors)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                const Icon(
-                  Icons.timer_outlined,
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      width: 370,
+      height: 70,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          gradient: LinearGradient(colors: gradientColors)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              const Icon(
+                Icons.timer_outlined,
+                color: Colors.white,
+              ),
+              const SizedBox(
+                width: 8,
+              ),
+              Text(
+                'Time',
+                style: GoogleFonts.poppins(
                   color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 25,
                 ),
-                const SizedBox(
-                  width: 8,
-                ),
-                Text(
-                  'Time',
-                  style: GoogleFonts.poppins(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 25,
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Row(
+                children: [
+                  Text(
+                    '~ ${plan.time} min',
+                    style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                if (planTitle == plan.wk_plan1)
-                  Row(
-                    children: [
-                      Text(
-                        '~ ${plan.time1} min',
-                        style: GoogleFonts.poppins(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                if (planTitle == plan.wk_plan2)
-                  Row(
-                    children: [
-                      Text(
-                        '~ ${plan.time2} min',
-                        style: GoogleFonts.poppins(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                if (planTitle == plan.wk_plan3)
-                  Row(
-                    children: [
-                      Text(
-                        '~ ${plan.time3} min',
-                        style: GoogleFonts.poppins(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  )
-              ],
-            )
-          ],
-        ));
+                ],
+              ),
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
 
 class PlanDetails extends StatelessWidget {
-  const PlanDetails({super.key, required this.planTitle, required this.plan});
-  final String planTitle;
+  const PlanDetails({super.key, required this.subplan});
 
-  final Plan plan;
+  final SubPlan subplan;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -204,48 +205,19 @@ class PlanDetails extends StatelessWidget {
                 fontWeight: FontWeight.w500),
           ),
           const SizedBox(height: 15),
-          if (planTitle == plan.wk_plan1)
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                for (final i in plan.wk_ex1)
-                  Text(
-                    '- $i',
-                    style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w300),
-                  )
-              ],
-            ),
-          if (planTitle == plan.wk_plan2)
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                for (final i in plan.wk_ex2)
-                  Text(
-                    '- $i',
-                    style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w300),
-                  )
-              ],
-            ),
-          if (planTitle == plan.wk_plan3)
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                for (final i in plan.wk_ex3)
-                  Text(
-                    '- $i',
-                    style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w300),
-                  )
-              ],
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              for (final i in subplan.exercises)
+                Text(
+                  '- $i',
+                  style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w300),
+                )
+            ],
+          ),
         ],
       ),
     );
@@ -268,8 +240,8 @@ class StartButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: SizedBox(
-        width: 100,
-        height: 100,
+        width: 85,
+        height: 85,
         child: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -286,11 +258,45 @@ class StartButton extends StatelessWidget {
               style: GoogleFonts.poppins(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: 18,
+                fontSize: 14,
               ),
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class DescriptionWidget extends StatelessWidget {
+  const DescriptionWidget({
+    super.key,
+    required this.description,
+  });
+
+  final String description;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Center(
+              child: Text(
+                description,
+                style: GoogleFonts.poppins(
+                  color: const Color(0xffACA3A5),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

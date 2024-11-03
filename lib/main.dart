@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:gymapp/create_db_script.dart';
+import 'package:gymapp/models/plans.dart';
+import 'package:gymapp/models/subplan.dart';
 import 'package:gymapp/providers/exercise_provider.dart';
 import 'package:gymapp/providers/plans_provider.dart';
 import 'package:gymapp/providers/user_data_getter_provider.dart';
 import 'package:gymapp/providers/user_data_provider.dart';
+import 'package:gymapp/providers/user_exercise_provider.dart';
 import 'package:gymapp/screens/login/sign_up_details_screen.dart';
 import 'package:gymapp/screens/login/sign_up_screen.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
@@ -25,6 +29,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // setup();
   runApp(const GymApp());
 }
 
@@ -47,20 +52,23 @@ class GymApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => UserDataGetterProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => UserExerciseProvider(),
+        ),
       ],
       child: MaterialApp(
-        theme: ThemeData(
-          scaffoldBackgroundColor: const Color.fromRGBO(42, 44, 56, 1),
-          colorScheme:
-              const ColorScheme.dark().copyWith(background: Colors.red),
-        ),
-        home: //const MainScreenWidget(),
-            //SignUpScreen(),
-            //const StartScreen(),
-            // const SignUpDetailsScreen(),
-            //const HomeScreenWidget()
-            PlanScreen(),
-      ),
+          theme: ThemeData(
+            scaffoldBackgroundColor: const Color.fromRGBO(42, 44, 56, 1),
+            colorScheme:
+                const ColorScheme.dark().copyWith(background: Colors.red),
+          ),
+          home: //const MainScreenWidget(),
+              //SignUpScreen(),
+              //const StartScreen(),
+              // const SignUpDetailsScreen(),
+              const HomeScreenWidget()
+          //PlanScreen(),
+          ),
     );
   }
 }

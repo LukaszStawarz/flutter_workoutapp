@@ -1,7 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gymapp/main.dart';
 import 'package:gymapp/providers/user_data_provider.dart';
 import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/widgets/flat_text_button.dart';
@@ -272,11 +270,11 @@ class _CheckBoxWidgetState extends State<CheckBoxWidget> {
 
   @override
   Widget build(BuildContext context) {
-    Color getColor(Set<MaterialState> states) {
-      const Set<MaterialState> interactiveStates = <MaterialState>{
-        MaterialState.pressed,
-        MaterialState.hovered,
-        MaterialState.focused
+    Color getColor(Set<WidgetState> states) {
+      const Set<WidgetState> interactiveStates = <MaterialState>{
+        WidgetState.pressed,
+        WidgetState.hovered,
+        WidgetState.focused
       };
       if (states.any(interactiveStates.contains)) {
         return Colors.blue;
@@ -286,7 +284,7 @@ class _CheckBoxWidgetState extends State<CheckBoxWidget> {
 
     return Checkbox(
       checkColor: const Color.fromRGBO(118, 50, 208, 1),
-      fillColor: MaterialStateProperty.resolveWith((getColor)),
+      fillColor: WidgetStateProperty.resolveWith((getColor)),
       value: isChecked,
       onChanged: (bool? value) {
         setState(() {

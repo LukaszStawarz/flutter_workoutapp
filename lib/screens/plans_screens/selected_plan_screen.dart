@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/models/plans.dart';
+import 'package:gymapp/models/subplan.dart';
 import 'package:gymapp/screens/plans_screens/plan_details.dart';
 
 class SelectedPlanScreen extends StatelessWidget {
@@ -20,27 +21,17 @@ class SelectedPlanScreen extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              WorkoutPlanWidget(
-                image: plan.image_easy,
-                planTitle: plan.wk_plan1,
-                plan: plan,
+              ...plan.subplan.map(
+                (subplan) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: WorkoutPlanWidget(
+                      subplan: subplan,
+                      planId: plan.id,
+                    ),
+                  );
+                },
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              WorkoutPlanWidget(
-                image: plan.image_med,
-                planTitle: plan.wk_plan2,
-                plan: plan,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              WorkoutPlanWidget(
-                image: plan.image_hard,
-                planTitle: plan.wk_plan3,
-                plan: plan,
-              )
             ],
           ),
         ),
@@ -50,14 +41,15 @@ class SelectedPlanScreen extends StatelessWidget {
 }
 
 class WorkoutPlanWidget extends StatelessWidget {
-  const WorkoutPlanWidget(
-      {super.key,
-      required this.plan,
-      required this.planTitle,
-      required this.image});
-  final Plan plan;
-  final String planTitle;
-  final String image;
+  const WorkoutPlanWidget({
+    super.key,
+    required this.subplan,
+    required this.planId,
+  });
+
+  final SubPlan subplan;
+  final String planId;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -69,23 +61,26 @@ class WorkoutPlanWidget extends StatelessWidget {
       height: 200,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        image: DecorationImage(image: NetworkImage(image), fit: BoxFit.cover),
+        image: DecorationImage(
+            image: NetworkImage(subplan.image), fit: BoxFit.cover),
       ),
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(
+          Navigator.of(context).push(
+            MaterialPageRoute(
               builder: (context) => PlanDetailsScreen(
-                    plan: plan,
-                    planTitle: planTitle,
-                    image: image,
-                  )));
+                subplan: subplan,
+                planId: planId,
+              ),
+            ),
+          );
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              planTitle,
+              subplan.planTitle,
               style: GoogleFonts.poppins(
                 color: Colors.black,
                 fontWeight: FontWeight.w600,

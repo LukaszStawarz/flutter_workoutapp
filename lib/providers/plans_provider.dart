@@ -12,7 +12,7 @@ class PlanProvider extends ChangeNotifier {
 
     for (final doc in planReference.docs) {
       Map<String, dynamic> documentData = doc.data();
-      // documentData['id'] = doc.id;
+      documentData['id'] = doc.id;
 
       final Plan plan = Plan.fromJson(documentData);
       plans.add(plan);

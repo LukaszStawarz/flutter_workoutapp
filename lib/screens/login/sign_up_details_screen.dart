@@ -1,9 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gymapp/main.dart';
 import 'package:gymapp/providers/user_data_provider.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/widgets/button_bp.dart';

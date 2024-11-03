@@ -22,21 +22,23 @@ class PlanScreen extends StatelessWidget {
     final List<Plan> planList = planProvider.plans;
 
     return Scaffold(
-      body: GridView(
-        padding: const EdgeInsets.all(15),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 1,
-          childAspectRatio: 5,
-          mainAxisSpacing: 15,
+      body: SafeArea(
+        child: GridView(
+          padding: const EdgeInsets.all(15),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 1,
+            childAspectRatio: 5,
+            mainAxisSpacing: 15,
+          ),
+          children: [
+            ...planList.map((plan) => PlanWidget(
+                  onSelectPlan: () {
+                    _selectPlan(context, plan);
+                  },
+                  plan: plan,
+                )),
+          ],
         ),
-        children: [
-          ...planList.map((plan) => PlanWidget(
-                onSelectPlan: () {
-                  _selectPlan(context, plan);
-                },
-                plan: plan,
-              )),
-        ],
       ),
     );
   }

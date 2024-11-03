@@ -44,11 +44,12 @@ class PlanWidget extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             Flexible(
-                child: Image.network(
-              plan.imageURL,
-              height: 30,
-              width: 40,
-            )),
+              child: Image.network(
+                plan.dashboardImageUrl,
+                height: 30,
+                width: 40,
+              ),
+            ),
           ],
         ),
       ),
