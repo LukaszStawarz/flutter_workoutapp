@@ -35,17 +35,20 @@ class _StartedPlanScreenState extends State<StartedPlanScreen> {
           ),
         );
     if (indexOfCurrentExercise + 1 >= widget.plan.exercises.length) {
-      _isCompleted = true;
-      _showCompletionNotification();
+      if (!_isCompleted) {
+        _isCompleted = true;
+        _showCompletionNotification();
+      }
     } else {
       indexOfCurrentExercise++;
-      setState(() {});
     }
+    setState(() {});
   }
 
   void _showCompletionNotification() {
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Gratulacje!'),
@@ -53,6 +56,8 @@ class _StartedPlanScreenState extends State<StartedPlanScreen> {
           actions: <Widget>[
             TextButton(
               onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).pop();
                 Navigator.of(context).pop();
                 Navigator.of(context).pop();
               },
@@ -74,16 +79,24 @@ class _StartedPlanScreenState extends State<StartedPlanScreen> {
             ),
           );
       if (indexOfCurrentExercise + 1 >= widget.plan.exercises.length) {
-        _isCompleted = true;
-        _showCompletionNotification();
+        if (!_isCompleted) {
+          _isCompleted = true;
+          _showCompletionNotification();
+        }
       } else {
         indexOfCurrentExercise++;
       }
+      setState(() {});
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    // return PopScope(
+    //   onPopInvoked: (didPop) {
+    //     context.read<UserExerciseProvider>().onCanceled();
+    //   },
+    // child:
     return Scaffold(
       appBar: AppBar(
         title: Text(

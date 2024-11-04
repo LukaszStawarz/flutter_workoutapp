@@ -53,7 +53,7 @@ class ExerciseScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               ExpansionTileWidget(
                 title: 'Cardio Exercises',
@@ -80,7 +80,7 @@ class ExerciseScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               ExpansionTileWidget(
                 title: 'Strength Exercises',
@@ -108,7 +108,7 @@ class ExerciseScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               ExpansionTileWidget(
                 title: 'Warm-up Exercises',
@@ -135,7 +135,7 @@ class ExerciseScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               ExpansionTileWidget(
                 title: 'Yoga Exercises',
@@ -160,9 +160,6 @@ class ExerciseScreen extends StatelessWidget {
                       .toList()
                     ..sort(((a, b) => a.name.compareTo(b.name)))
                 ],
-              ),
-              const SizedBox(
-                height: 10,
               ),
             ],
           ),
