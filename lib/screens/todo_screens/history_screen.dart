@@ -40,7 +40,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
 
     return Scaffold(
       body: userWorkoutProvider.isLoading
-          ? Center(
+          ? const Center(
               child: CircularProgressIndicator(),
             )
           : SingleChildScrollView(
@@ -96,8 +96,8 @@ class HistoryContainerWidget extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
             color: Colors.grey[900],
-            border:
-                Border.all(color: Color.fromARGB(118, 162, 67, 206), width: 2),
+            border: Border.all(
+                color: const Color.fromARGB(118, 162, 67, 206), width: 2),
             borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(
@@ -111,9 +111,9 @@ class HistoryContainerWidget extends StatelessWidget {
                     Image.network(
                       image,
                       scale: 2,
-                      color: Color.fromARGB(226, 192, 86, 241),
+                      color: const Color.fromARGB(226, 192, 86, 241),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Text(
@@ -137,7 +137,7 @@ class HistoryContainerWidget extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Icon(Icons.calendar_today,
+                    const Icon(Icons.calendar_today,
                         color: Color.fromARGB(226, 192, 86, 241), size: 16),
                     const SizedBox(width: 8),
                     Text(
@@ -150,7 +150,7 @@ class HistoryContainerWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5.0,
                 ),
                 Text(
