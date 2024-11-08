@@ -66,4 +66,19 @@ class UserDataProvider extends ChangeNotifier {
       );
     }
   }
+
+  Future<void> updateUserData2({
+    required String goal,
+    required String level,
+  }) async {
+    if (userCredential != null) {
+      _firestore.collection('users').doc(userCredential!.user!.uid).set(
+        {
+          'goal': goal,
+          'level': level,
+        },
+        SetOptions(merge: true),
+      );
+    }
+  }
 }

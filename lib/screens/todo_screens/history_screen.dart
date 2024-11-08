@@ -90,6 +90,21 @@ class HistoryContainerWidget extends StatelessWidget {
           (element) => !element.wasSkipped,
         )
         .length;
+    Color getFinishedExColor(int finishedExercises, int totalExercises) {
+      if (finishedExercises == 0) {
+        return Colors.red;
+      } else if (finishedExercises > 0 &&
+          finishedExercises < totalExercises / 2) {
+        return Colors.orange;
+      } else if (finishedExercises >= totalExercises / 2 &&
+          finishedExercises < totalExercises) {
+        return Colors.yellow;
+      } else if (finishedExercises == totalExercises) {
+        return Colors.green;
+      }
+      return Colors.white;
+    }
+
     return Padding(
         padding: const EdgeInsets.all(15.0),
         child: Container(
@@ -154,11 +169,12 @@ class HistoryContainerWidget extends StatelessWidget {
                   height: 5.0,
                 ),
                 Text(
-                  'Finished exercises: ${finishedExercises} / ${totalExercises}',
+                  'Finished exercises: $finishedExercises / $totalExercises',
                   style: GoogleFonts.poppins(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white,
+                    color:
+                        getFinishedExColor(finishedExercises, totalExercises),
                   ),
                 ),
                 ExpansionTile(

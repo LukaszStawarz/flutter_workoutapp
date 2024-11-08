@@ -9,7 +9,7 @@ part of 'subplan.dart';
 SubPlan _$SubPlanFromJson(Map<String, dynamic> json) => SubPlan(
       json['image'] as String,
       index: (json['index'] as num).toInt(),
-      planTitle: json['plan'] as String,
+      planTitle: json['planTitle'] as String,
       exercises:
           (json['exercises'] as List<dynamic>).map((e) => e as String).toList(),
       time: json['time'] as String,
@@ -18,7 +18,7 @@ SubPlan _$SubPlanFromJson(Map<String, dynamic> json) => SubPlan(
 
 Map<String, dynamic> _$SubPlanToJson(SubPlan instance) => <String, dynamic>{
       'index': instance.index,
-      'plan': instance.planTitle,
+      'planTitle': instance.planTitle,
       'exercises': instance.exercises,
       'time': instance.time,
       'description': instance.description,

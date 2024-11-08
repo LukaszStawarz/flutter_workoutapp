@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/providers/user_data_provider.dart';
+import 'package:gymapp/screens/login/su_details_screen2.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/widgets/textinput.dart';
@@ -178,7 +179,7 @@ class _SignUpDetailsScreenState extends State<SignUpDetailsScreen> {
                   ],
                 ),
                 ButtonBP(
-                  buttonText: 'Finish',
+                  buttonText: 'Next',
                   onClick: () {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
@@ -191,7 +192,8 @@ class _SignUpDetailsScreenState extends State<SignUpDetailsScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const HomeScreenWidget(),
+                          builder: (context) =>
+                              SuDetailsScreen2(), //const HomeScreenWidget(),
                         ),
                       );
                     }

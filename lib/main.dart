@@ -10,6 +10,7 @@ import 'package:gymapp/providers/user_exercise_provider.dart';
 import 'package:gymapp/providers/user_workout_provider.dart';
 import 'package:gymapp/screens/login/sign_up_details_screen.dart';
 import 'package:gymapp/screens/login/sign_up_screen.dart';
+import 'package:gymapp/screens/login/su_details_screen2.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/screens/login/start_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -62,19 +63,20 @@ class GymApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
-          theme: ThemeData(
-            scaffoldBackgroundColor: const Color.fromRGBO(42, 44, 56, 1),
-            colorScheme:
-                const ColorScheme.dark().copyWith(background: Colors.red),
-          ),
-          home: //const MainScreenWidget(),
-              //SignUpScreen(),
-              //const StartScreen(),
-              // const SignUpDetailsScreen(),
-              const HomeScreenWidget()
-          //PlanScreen(),
-          //HistoryScreen(),
-          ),
+        theme: ThemeData(
+          scaffoldBackgroundColor: const Color.fromRGBO(42, 44, 56, 1),
+          colorScheme:
+              const ColorScheme.dark().copyWith(background: Colors.red),
+        ),
+        home: //const MainScreenWidget(),
+            SignUpScreen(),
+        //const StartScreen(),
+        //SuDetailsScreen2(),
+        //const SignUpDetailsScreen(),
+        //const HomeScreenWidget()
+        //PlanScreen(),
+        //HistoryScreen(),
+      ),
     );
   }
 }

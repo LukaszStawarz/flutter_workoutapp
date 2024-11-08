@@ -29,7 +29,6 @@ class _LogInScreenState extends State<LogInScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _dataProvider = context.read<UserDataProvider>();
     if (_dataProvider.userCredential != null) {

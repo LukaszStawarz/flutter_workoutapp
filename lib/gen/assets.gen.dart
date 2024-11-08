@@ -57,9 +57,21 @@ class $AssetsImagesGen {
   /// File path: assets/images/discord.png
   AssetGenImage get discord => const AssetGenImage('assets/images/discord.png');
 
+  /// File path: assets/images/dude1.jpg
+  AssetGenImage get dude1 => const AssetGenImage('assets/images/dude1.jpg');
+
+  /// File path: assets/images/dude2.jpg
+  AssetGenImage get dude2 => const AssetGenImage('assets/images/dude2.jpg');
+
   /// File path: assets/images/instagram.png
   AssetGenImage get instagram =>
       const AssetGenImage('assets/images/instagram.png');
+
+  /// File path: assets/images/lady1.jpg
+  AssetGenImage get lady1 => const AssetGenImage('assets/images/lady1.jpg');
+
+  /// File path: assets/images/lady2.jpg
+  AssetGenImage get lady2 => const AssetGenImage('assets/images/lady2.jpg');
 
   /// File path: assets/images/lady_image.png
   AssetGenImage get ladyImage =>
@@ -90,7 +102,11 @@ class $AssetsImagesGen {
         chick,
         contactBg,
         discord,
+        dude1,
+        dude2,
         instagram,
+        lady1,
+        lady2,
         ladyImage,
         planBackgroundImage,
         profileImage,
