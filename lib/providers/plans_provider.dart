@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:gymapp/models/plans.dart';
@@ -13,7 +15,7 @@ class PlanProvider extends ChangeNotifier {
     for (final doc in planReference.docs) {
       Map<String, dynamic> documentData = doc.data();
       documentData['id'] = doc.id;
-
+      log('$documentData');
       final Plan plan = Plan.fromJson(documentData);
       plans.add(plan);
     }

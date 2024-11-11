@@ -87,31 +87,31 @@ class _SignUpScreenState extends State<SignUpScreen> {
         margin: const EdgeInsets.symmetric(horizontal: 10),
         child: Form(
           key: _form,
-          child: Column(
-            children: [
-              const SizedBox(height: 60),
-              Stack(
-                children: [
-                  const SizedBox(
-                    width: 100,
-                  ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Sign Up',
-                      style: GoogleFonts.poppins(
-                          color: const Color.fromARGB(255, 136, 133, 134),
-                          fontWeight: FontWeight.w600,
-                          fontSize: 40),
-                      textAlign: TextAlign.center,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(height: 60),
+                Stack(
+                  children: [
+                    const SizedBox(
+                      width: 100,
                     ),
-                  ),
-                  //SizedBox(width: 50),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Flexible(
-                child: TextInputWidget(
+                    Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Sign Up',
+                        style: GoogleFonts.poppins(
+                            color: const Color.fromARGB(255, 136, 133, 134),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 40),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    //SizedBox(width: 50),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                TextInputWidget(
                   hintT: 'Name',
                   backgroundColor: const Color(0xff161818),
                   keyboardType: TextInputType.name,
@@ -127,9 +127,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     _enteredName = p0!;
                   }),
                 ),
-              ),
-              Flexible(
-                child: TextInputWidget(
+                TextInputWidget(
                   hintT: 'Last name',
                   backgroundColor: const Color(0xff161818),
                   keyboardType: TextInputType.name,
@@ -144,9 +142,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     _enteredLastName = p0!;
                   }),
                 ),
-              ),
-              Flexible(
-                child: TextInputWidget(
+                TextInputWidget(
                   hintT: 'Phone number',
                   backgroundColor: const Color(0xff161818),
                   keyboardType: TextInputType.phone,
@@ -161,9 +157,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     _enteredPhoneNumber = p0!;
                   }),
                 ),
-              ),
-              Flexible(
-                child: TextInputWidget(
+                TextInputWidget(
                     hintT: 'Email',
                     backgroundColor: const Color(0xff161818),
                     keyboardType: TextInputType.emailAddress,
@@ -179,9 +173,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onSaved: ((p0) {
                       _enteredEmail = p0!;
                     })),
-              ),
-              Flexible(
-                child: TextInputWidget(
+                TextInputWidget(
                   hintT: 'Password',
                   backgroundColor: const Color(0xff161818),
                   keyboardType: TextInputType.text,
@@ -196,61 +188,62 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     _enteredPassword = p0!;
                   }),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CheckBoxWidget(),
-                    Flexible(
-                      child: Text(
-                          style: TextStyle(color: Color(0xffACA3A5)),
-                          'By continuing you accept our Privacy Policy and Term of Use'),
-                    ),
-                  ],
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CheckBoxWidget(),
+                      Flexible(
+                        child: Text(
+                            style: TextStyle(color: Color(0xffACA3A5)),
+                            'By continuing you accept our Privacy Policy and Term of Use'),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              ButtonBP(
-                onClick: () {
-                  _submit();
-                },
-                buttonText: 'Sign Up',
-              ),
-              Column(
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  FlatTextBtn(
-                    onClick: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const LogInScreen()),
-                      );
-                    },
-                    buttonText: 'You have an account? Login.',
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  FlatTextBtn(
-                    onClick: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ForgotPasswordScreen()),
-                      );
-                    },
-                    buttonText: 'Forgot your password?',
-                  )
-                ],
-              )
-            ],
+                const SizedBox(
+                  height: 30,
+                ),
+                ButtonBP(
+                  onClick: () {
+                    _submit();
+                  },
+                  buttonText: 'Sign Up',
+                ),
+                Column(
+                  children: [
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    FlatTextBtn(
+                      onClick: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LogInScreen()),
+                        );
+                      },
+                      buttonText: 'You have an account? Login.',
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    FlatTextBtn(
+                      onClick: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const ForgotPasswordScreen()),
+                        );
+                      },
+                      buttonText: 'Forgot your password?',
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
