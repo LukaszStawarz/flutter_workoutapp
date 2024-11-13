@@ -32,7 +32,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  // setup();
+  //setup();
   runApp(const GymApp());
 }
 

@@ -19,20 +19,22 @@ class SelectedPlanScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(25.0),
         child: Center(
-          child: Column(
-            children: [
-              ...plan.subplan.map(
-                (subplan) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: WorkoutPlanWidget(
-                      subplan: subplan,
-                      planId: plan.id,
-                    ),
-                  );
-                },
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                ...plan.subplan.map(
+                  (subplan) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: WorkoutPlanWidget(
+                        subplan: subplan,
+                        planId: plan.id,
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -77,16 +79,33 @@ class WorkoutPlanWidget extends StatelessWidget {
           );
         },
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              subplan.planTitle,
-              style: GoogleFonts.poppins(
-                color: Colors.black,
-                fontWeight: FontWeight.w600,
-                fontSize: 30,
+            Expanded(
+              child: Stack(
+                children: [
+                  Text(
+                    subplan.planTitle,
+                    style: GoogleFonts.poppins(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w600,
+                      foreground: Paint()
+                        ..style = PaintingStyle.stroke
+                        ..strokeWidth = 6 // Grubość obrysu
+                        ..color = Colors.black, // Kolor obrysu
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    subplan.planTitle,
+                    style: GoogleFonts.poppins(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w600,
+                      color: const Color(0xff7632D0), // Kolor wypełnienia
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),
