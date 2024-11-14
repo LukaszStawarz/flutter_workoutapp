@@ -14,10 +14,11 @@ class ExerciseProvider extends ChangeNotifier {
   final List<WarmUp> warmUpList = [];
   final List<Breathing> breathingList = [];
   final List<Yoga> yogaList = [];
-
+  bool isLoading = false;
   Future<void> getExercises() async {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
-
+    isLoading = true;
+    notifyListeners();
     final exerciseReference = await firestore.collection('exercises').get();
 
     for (final doc in exerciseReference.docs) {
@@ -49,6 +50,7 @@ class ExerciseProvider extends ChangeNotifier {
       final Exercises exercises = Exercises.fromJson(documentData);
       exercisesList.add(exercises);
     }
+    isLoading = false;
     notifyListeners();
   }
 }

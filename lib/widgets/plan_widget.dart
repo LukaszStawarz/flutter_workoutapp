@@ -46,6 +46,7 @@ class PlanWidget extends StatelessWidget {
             Flexible(
               child: Image.network(
                 plan.dashboardImageUrl,
+                color: Colors.black,
                 height: 30,
                 width: 40,
               ),

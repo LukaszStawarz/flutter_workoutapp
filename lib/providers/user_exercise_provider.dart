@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:gymapp/models/subplan.dart';
 import 'package:gymapp/models/user_exercise.dart';
 
 class UserExerciseProvider extends ChangeNotifier {

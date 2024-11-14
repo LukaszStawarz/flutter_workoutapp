@@ -1,9 +1,6 @@
 import 'dart:async';
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gymapp/models/plans.dart';
 import 'package:gymapp/models/subplan.dart';
 import 'package:gymapp/models/user_exercise.dart';
 import 'package:gymapp/providers/user_exercise_provider.dart';
@@ -403,7 +400,6 @@ class _CountdownExerciseTimerWidget
   late int _seconds;
   Timer? _timer;
   bool _isFinished = false;
-  bool _isCompleted = false;
 
   @override
   void initState() {

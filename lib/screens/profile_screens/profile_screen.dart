@@ -82,7 +82,7 @@ class ProfileScreen extends StatelessWidget {
             height: 20,
           ),
           Text(
-            '${userData!['user_name']} ${userData!['user_lastname']}',
+            '${userData!['user_name']} ${userData['user_lastname']}',
             style: GoogleFonts.poppins(
               color: const Color.fromARGB(255, 136, 133, 134),
               fontWeight: FontWeight.w500,
@@ -93,98 +93,101 @@ class ProfileScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          SizedBox(
-            width: 330,
-            //color: const Color.fromARGB(255, 44, 46, 59),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Account',
-                  style: GoogleFonts.poppins(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                ProfileButton(
-                  name: 'Personal Data',
-                  svgPath: Assets.svg.personalDataIcon,
-                  onclick: () {
-                    _selectedPersonalDataScreen();
-                  },
-                ),
-                const SizedBox(
-                  height: 7,
-                ),
-                ProfileButton(
-                  name: 'Achievements',
-                  svgPath: Assets.svg.achievementIcon,
-                  onclick: () {
-                    _selectedAchievementsScreen();
-                  },
-                ),
-                const SizedBox(
-                  height: 7,
-                ),
-                ProfileButton(
-                  name: 'Workout Progress',
-                  svgPath: Assets.svg.workoutProgressIcon,
-                  onclick: () {
-                    _selectedWorkoutProgressScreen();
-                  },
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  'Other',
-                  style: GoogleFonts.poppins(
+          Expanded(
+            child: SizedBox(
+              width: 330,
+              //color: const Color.fromARGB(255, 44, 46, 59),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Account',
+                    style: GoogleFonts.poppins(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      fontSize: 20),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                ProfileButton(
-                  name: 'Contact Us',
-                  svgPath: Assets.svg.contactUsIcon,
-                  onclick: () {
-                    _selectedContactUsScreen();
-                  },
-                ),
-                const SizedBox(
-                  height: 7,
-                ),
-                ProfileButton(
-                  name: 'Privacy Policy',
-                  svgPath: Assets.svg.privacyPolicyIcon,
-                  onclick: () {
-                    _selectedPrivacyPolicyScreen();
-                  },
-                ),
-                const SizedBox(
-                  height: 80,
-                ),
-                Center(
-                  child: ButtonBP(
-                    buttonText: 'Log Out',
-                    onClick: () {
-                      FirebaseAuth.instance.signOut();
-                      _selectedLogOutButton();
-                    },
-                    isBig: false,
+                      fontSize: 20,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                ),
-                // ButtonBP.smallRed(buttonText: 'ButtonText', onClick: () {}),
-                // ButtonBP.bigRed(buttonText: 'ButtonText', onClick: () {}),
-              ],
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ProfileButton(
+                    name: 'Personal Data',
+                    svgPath: Assets.svg.personalDataIcon,
+                    onclick: () {
+                      _selectedPersonalDataScreen();
+                    },
+                  ),
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  ProfileButton(
+                    name: 'Achievements',
+                    svgPath: Assets.svg.achievementIcon,
+                    onclick: () {
+                      _selectedAchievementsScreen();
+                    },
+                  ),
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  ProfileButton(
+                    name: 'Workout Progress',
+                    svgPath: Assets.svg.workoutProgressIcon,
+                    onclick: () {
+                      _selectedWorkoutProgressScreen();
+                    },
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Text(
+                    'Other',
+                    style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ProfileButton(
+                    name: 'Contact Us',
+                    svgPath: Assets.svg.contactUsIcon,
+                    onclick: () {
+                      _selectedContactUsScreen();
+                    },
+                  ),
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  ProfileButton(
+                    name: 'Privacy Policy',
+                    svgPath: Assets.svg.privacyPolicyIcon,
+                    onclick: () {
+                      _selectedPrivacyPolicyScreen();
+                    },
+                  ),
+                  const Spacer(),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: ButtonBP(
+                        buttonText: 'Log Out',
+                        onClick: () {
+                          FirebaseAuth.instance.signOut();
+                          _selectedLogOutButton();
+                        },
+                        isBig: false,
+                      ),
+                    ),
+                  ),
+                  // ButtonBP.smallRed(buttonText: 'ButtonText', onClick: () {}),
+                  // ButtonBP.bigRed(buttonText: 'ButtonText', onClick: () {}),
+                ],
+              ),
             ),
           ),
         ],

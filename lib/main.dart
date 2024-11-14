@@ -8,12 +8,14 @@ import 'package:gymapp/providers/user_data_getter_provider.dart';
 import 'package:gymapp/providers/user_data_provider.dart';
 import 'package:gymapp/providers/user_exercise_provider.dart';
 import 'package:gymapp/providers/user_workout_provider.dart';
+import 'package:gymapp/screens/login/log_in_screen.dart';
 import 'package:gymapp/screens/login/sign_up_details_screen.dart';
 import 'package:gymapp/screens/login/sign_up_screen.dart';
 import 'package:gymapp/screens/login/su_details_screen2.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/screens/login/start_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:gymapp/screens/plans_screens/create_plan_screen.dart';
 import 'package:gymapp/screens/plans_screens/plan_details.dart';
 import 'package:gymapp/screens/plans_screens/plan_screen.dart';
 import 'package:gymapp/screens/todo_screens/history_screen.dart';
@@ -69,8 +71,10 @@ class GymApp extends StatelessWidget {
               const ColorScheme.dark().copyWith(background: Colors.red),
         ),
         home: //const MainScreenWidget(),
-            SignUpScreen(),
-        //const StartScreen(),
+            //SignUpScreen(),
+            LogInScreen(),
+        //CreatePlanScreen(),
+
         //SuDetailsScreen2(),
         //const SignUpDetailsScreen(),
         //const HomeScreenWidget()

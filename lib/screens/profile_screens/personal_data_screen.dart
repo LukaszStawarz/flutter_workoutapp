@@ -33,40 +33,44 @@ class PersonalDataScreen extends StatelessWidget {
               ? Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/profile_image.png',
-                            scale: 1.5,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      TextContainerWidget(
-                          text: 'Name: ',
-                          userData: '${userData!['user_name']}'),
-                      TextContainerWidget(
-                          text: 'Surname: ',
-                          userData: '${userData['user_lastname']}'),
-                      TextContainerWidget(
-                          text: 'Phone number: ',
-                          userData: '${userData['user_phone_number']}'),
-                      TextContainerWidget(
-                          text: 'Email: ',
-                          userData: '${userData['user_email']}'),
-                      TextContainerWidget(
-                          text: 'Gender: ', userData: '${userData['gender']}'),
-                      TextContainerWidget(
-                          text: 'Weight: ', userData: '${userData['weight']}'),
-                      TextContainerWidget(
-                          text: 'Height: : ',
-                          userData: '${userData['height']}'),
-                    ],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              'assets/images/profile_image.png',
+                              scale: 1.5,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextContainerWidget(
+                            text: 'Name: ',
+                            userData: '${userData!['user_name']}'),
+                        TextContainerWidget(
+                            text: 'Surname: ',
+                            userData: '${userData['user_lastname']}'),
+                        TextContainerWidget(
+                            text: 'Phone number: ',
+                            userData: '${userData['user_phone_number']}'),
+                        TextContainerWidget(
+                            text: 'Email: ',
+                            userData: '${userData['user_email']}'),
+                        TextContainerWidget(
+                            text: 'Gender: ',
+                            userData: '${userData['gender']}'),
+                        TextContainerWidget(
+                            text: 'Weight: ',
+                            userData: '${userData['weight']}'),
+                        TextContainerWidget(
+                            text: 'Height: : ',
+                            userData: '${userData['height']}'),
+                      ],
+                    ),
                   ),
                 )
               : Container());

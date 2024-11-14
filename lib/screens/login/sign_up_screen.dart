@@ -4,7 +4,6 @@ import 'package:gymapp/providers/user_data_provider.dart';
 import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/widgets/flat_text_button.dart';
 import 'package:gymapp/widgets/textinput.dart';
-import 'package:gymapp/screens/login/forgot_pass_screen.dart';
 import 'package:gymapp/screens/login/log_in_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
@@ -90,11 +89,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(height: 60),
-                Stack(
+                const SizedBox(height: 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const SizedBox(
-                      width: 100,
+                    SizedBox(
+                      width: 40,
                     ),
                     Align(
                       alignment: Alignment.center,
@@ -107,10 +107,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    //SizedBox(width: 50),
+                    FlatTextBtn(
+                      onClick: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LogInScreen()),
+                        );
+                      },
+                      buttonText: 'Login',
+                    ), //SizedBox(width: 50),
                   ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 5),
                 TextInputWidget(
                   hintT: 'Name',
                   backgroundColor: const Color(0xff161818),
@@ -211,37 +220,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   },
                   buttonText: 'Sign Up',
                 ),
-                Column(
-                  children: [
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    FlatTextBtn(
-                      onClick: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LogInScreen()),
-                        );
-                      },
-                      buttonText: 'You have an account? Login.',
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    FlatTextBtn(
-                      onClick: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const ForgotPasswordScreen()),
-                        );
-                      },
-                      buttonText: 'Forgot your password?',
-                    )
-                  ],
-                )
               ],
             ),
           ),

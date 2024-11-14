@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/providers/user_data_provider.dart';
 import 'package:gymapp/screens/login/su_details_screen2.dart';
-import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/widgets/button_bp.dart';
 import 'package:gymapp/widgets/textinput.dart';
 import 'package:provider/provider.dart';

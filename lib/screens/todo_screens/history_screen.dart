@@ -1,8 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gymapp/main.dart';
 import 'package:gymapp/models/plans.dart';
 import 'package:gymapp/models/subplan.dart';
 import 'package:gymapp/models/user_exercise.dart';
