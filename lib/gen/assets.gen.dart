@@ -23,6 +23,26 @@ class $AssetsImagesGen {
   /// File path: assets/images/Logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/Logo.png');
 
+  /// File path: assets/images/bg_example1.png
+  AssetGenImage get bgExample1 =>
+      const AssetGenImage('assets/images/bg_example1.png');
+
+  /// File path: assets/images/bg_example2.png
+  AssetGenImage get bgExample2 =>
+      const AssetGenImage('assets/images/bg_example2.png');
+
+  /// File path: assets/images/bg_example3.png
+  AssetGenImage get bgExample3 =>
+      const AssetGenImage('assets/images/bg_example3.png');
+
+  /// File path: assets/images/bg_example4.png
+  AssetGenImage get bgExample4 =>
+      const AssetGenImage('assets/images/bg_example4.png');
+
+  /// File path: assets/images/bg_example5.png
+  AssetGenImage get bgExample5 =>
+      const AssetGenImage('assets/images/bg_example5.png');
+
   /// File path: assets/images/category_brth.png
   AssetGenImage get categoryBrth =>
       const AssetGenImage('assets/images/category_brth.png');
@@ -93,6 +113,11 @@ class $AssetsImagesGen {
         exerciseExampleImage,
         exerciseExampleVideo,
         logo,
+        bgExample1,
+        bgExample2,
+        bgExample3,
+        bgExample4,
+        bgExample5,
         categoryBrth,
         categoryCardio,
         categoryFav,

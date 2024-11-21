@@ -21,178 +21,270 @@ class ExerciseScreen extends StatelessWidget {
     final List<WarmUp> warmup = exerciseProvider.warmUpList;
     final List<Strength> strength = exerciseProvider.strengthList;
 
-    //final ThemeData theme = Theme.of(context);
-    return SizedBox.expand(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              ExpansionTileWidget(
-                title: 'Breathing Exercises',
-                lista: [
-                  ...breathing
-                      .map(
-                        (e) => ListComponent(
-                            onclick: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ExerciseDetailsScreen(
-                                    title: e.title,
-                                    description: e.description,
-                                    howto: e.howto,
+    return Scaffold(
+      body: exerciseProvider.isLoading
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/images/bg_example2.png'),
+                    fit: BoxFit.cover),
+              ),
+              child: Stack(children: [
+                Scrollbar(
+                  interactive: true,
+                  thickness: 8,
+                  thumbVisibility: true,
+                  trackVisibility: true,
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 138, 135, 136))),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Breathing Exercises',
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 20,
                                   ),
+                                  textAlign: TextAlign.center,
                                 ),
-                              );
-                            },
-                            name: e.title),
-                      )
-                      .toList()
-                    ..sort(((a, b) => a.name.compareTo(b.name)))
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              ExpansionTileWidget(
-                title: 'Cardio Exercises',
-                lista: [
-                  ...cardio
-                      .map(
-                        (e) => ListComponent(
-                            onclick: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ExerciseDetailsScreen(
-                                    title: e.title,
-                                    description: e.description,
-                                    howto: e.howto,
+                                ...breathing
+                                    .map(
+                                      (e) => ListComponent(
+                                          onclick: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ExerciseDetailsScreen(
+                                                  title: e.title,
+                                                  description: e.description,
+                                                  howto: e.howto,
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                          name: e.title),
+                                    )
+                                    .toList()
+                                  ..sort(
+                                    ((a, b) => a.name.compareTo(b.name)),
                                   ),
-                                ),
-                              );
-                            },
-                            name: e.title),
-                      )
-                      .toList()
-                    ..sort(((a, b) => a.name.compareTo(b.name)))
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              ExpansionTileWidget(
-                title: 'Strength Exercises',
-                lista: [
-                  ...strength
-                      .map(
-                        (e) => ListComponent(
-                          onclick: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ExerciseDetailsScreen(
-                                  title: e.title,
-                                  description: e.description,
-                                  howto: e.howto,
-                                ),
-                              ),
-                            );
-                          },
-                          name: e.title,
-                        ),
-                      )
-                      .toList()
-                    ..sort(((a, b) => a.name.compareTo(b.name)))
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              ExpansionTileWidget(
-                title: 'Warm-up Exercises',
-                lista: [
-                  ...warmup
-                      .map(
-                        (e) => ListComponent(
-                            onclick: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ExerciseDetailsScreen(
-                                    title: e.title,
-                                    description: e.description,
-                                    howto: e.howto,
+                                const SizedBox(
+                                  height: 8,
+                                )
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 138, 135, 136))),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Cardio Exercises',
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 20,
                                   ),
+                                  textAlign: TextAlign.center,
                                 ),
-                              );
-                            },
-                            name: e.title),
-                      )
-                      .toList()
-                    ..sort(((a, b) => a.name.compareTo(b.name)))
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              ExpansionTileWidget(
-                title: 'Yoga Exercises',
-                lista: [
-                  ...yoga
-                      .map(
-                        (e) => ListComponent(
-                            onclick: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ExerciseDetailsScreen(
-                                    title: e.title,
-                                    description: e.description,
-                                    howto: e.howto,
+                                ...cardio
+                                    .map(
+                                      (e) => ListComponent(
+                                          onclick: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ExerciseDetailsScreen(
+                                                  title: e.title,
+                                                  description: e.description,
+                                                  howto: e.howto,
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                          name: e.title),
+                                    )
+                                    .toList()
+                                  ..sort(((a, b) => a.name.compareTo(b.name))),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 138, 135, 136))),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Strength Exercises',
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 20,
                                   ),
+                                  textAlign: TextAlign.center,
                                 ),
-                              );
-                            },
-                            name: e.title),
-                      )
-                      .toList()
-                    ..sort(((a, b) => a.name.compareTo(b.name)))
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+                                ...strength
+                                    .map(
+                                      (e) => ListComponent(
+                                          onclick: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ExerciseDetailsScreen(
+                                                  title: e.title,
+                                                  description: e.description,
+                                                  howto: e.howto,
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                          name: e.title),
+                                    )
+                                    .toList()
+                                  ..sort(((a, b) => a.name.compareTo(b.name))),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 138, 135, 136))),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Warm-up Exercises',
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 20,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                ...warmup
+                                    .map(
+                                      (e) => ListComponent(
+                                          onclick: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ExerciseDetailsScreen(
+                                                  title: e.title,
+                                                  description: e.description,
+                                                  howto: e.howto,
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                          name: e.title),
+                                    )
+                                    .toList()
+                                  ..sort(((a, b) => a.name.compareTo(b.name))),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 138, 135, 136))),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Yoga Exercises',
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 20,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                ...yoga
+                                    .map(
+                                      (e) => ListComponent(
+                                          onclick: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ExerciseDetailsScreen(
+                                                  title: e.title,
+                                                  description: e.description,
+                                                  howto: e.howto,
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                          name: e.title),
+                                    )
+                                    .toList()
+                                  ..sort(((a, b) => a.name.compareTo(b.name))),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ]),
+            ),
     );
   }
 }
 
-class ExpansionTileWidget extends StatelessWidget {
-  const ExpansionTileWidget(
-      {super.key, required this.title, required this.lista});
-  final String title;
-  final List<Widget> lista;
-  @override
-  Widget build(BuildContext context) {
-    return ExpansionTile(
-      tilePadding: const EdgeInsets.only(left: 30, right: 20),
-      childrenPadding: const EdgeInsets.only(bottom: 20),
-      collapsedBackgroundColor: Colors.black54,
-      backgroundColor: Colors.black54,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
-      ),
-      collapsedShape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      title: Text(title),
-      children: lista,
-    );
-  }
-}
-
-class ListComponent extends StatelessWidget {
+class ListComponent extends StatefulWidget {
   const ListComponent({
     super.key,
     required this.onclick,
@@ -203,14 +295,21 @@ class ListComponent extends StatelessWidget {
   final String name;
 
   @override
+  State<ListComponent> createState() => _ListComponentState();
+}
+
+class _ListComponentState extends State<ListComponent> {
+  bool? isChecked = false;
+
+  @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: () {
-        onclick.call();
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () {
+          widget.onclick.call();
+        },
         child: Row(
           children: [
             Image.asset('assets/images/Exercise_example_image.png'),
@@ -218,7 +317,7 @@ class ListComponent extends StatelessWidget {
               width: 20,
             ),
             Text(
-              name,
+              widget.name,
               style: GoogleFonts.poppins(
                 color: Colors.white,
                 fontWeight: FontWeight.w300,

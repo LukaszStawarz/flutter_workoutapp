@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gymapp/models/exercises.dart';
 import 'package:gymapp/models/subplan.dart';
+import 'package:gymapp/providers/exercise_provider.dart';
 import 'package:gymapp/providers/user_exercise_provider.dart';
 import 'package:gymapp/screens/plans_screens/started_plan_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:collection/collection.dart';
 
 class PlanDetailsScreen extends StatelessWidget {
   const PlanDetailsScreen({
@@ -201,12 +204,38 @@ class TimeWidget extends StatelessWidget {
   }
 }
 
-class PlanDetails extends StatelessWidget {
-  const PlanDetails({super.key, required this.subplan});
+class PlanDetails extends StatefulWidget {
+  const PlanDetails({
+    super.key,
+    required this.subplan,
+  });
 
   final SubPlan subplan;
+
+  @override
+  State<PlanDetails> createState() => _PlanDetailsState();
+}
+
+class _PlanDetailsState extends State<PlanDetails> {
+  late ExerciseProvider exerciseProvider;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    exerciseProvider = context.read<ExerciseProvider>();
+  }
+
   @override
   Widget build(BuildContext context) {
+    exerciseProvider = context.watch<ExerciseProvider>();
+
+    if (exerciseProvider.exercisesList.isEmpty) {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       child: Column(
@@ -226,9 +255,9 @@ class PlanDetails extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              for (final i in subplan.exercises)
+              for (final exerciseId in widget.subplan.exercises)
                 Text(
-                  '- $i',
+                  '- ${_getExerciseTitleById(exerciseId)}',
                   style: GoogleFonts.poppins(
                       color: Colors.white,
                       fontSize: 15,
@@ -239,6 +268,15 @@ class PlanDetails extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String _getExerciseTitleById(String exerciseId) {
+    return exerciseProvider.exercisesList
+            .firstWhereOrNull(
+              (element) => element.id == exerciseId,
+            )
+            ?.title ??
+        '--- Brak nazwy ---';
   }
 }
 

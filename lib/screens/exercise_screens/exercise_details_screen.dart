@@ -17,61 +17,68 @@ class ExerciseDetailsScreen extends StatelessWidget {
         title: const Text('Exercise Details',
             style: TextStyle(color: Color(0xffACA3A5))),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              title,
-              style: GoogleFonts.poppins(
-                color: const Color.fromARGB(255, 136, 133, 134),
-                fontWeight: FontWeight.w500,
-                fontSize: 25,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/bg_example1.png'),
+              fit: BoxFit.cover),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 10,
               ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Image.asset(
-              'assets/images/Exercise_example_video.png',
-            ),
-            const SizedBox(height: 15),
-            Text(
-              'Description',
-              style: GoogleFonts.poppins(
-                  color: const Color.fromARGB(255, 189, 183, 185),
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(height: 15),
-            Text(
-              description,
-              style: GoogleFonts.poppins(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w300),
-            ),
-            const SizedBox(height: 25),
-            Text(
-              'How to',
-              style: GoogleFonts.poppins(
-                  color: const Color.fromARGB(255, 189, 183, 185),
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(height: 15),
-            Text(
-              howto,
-              style: GoogleFonts.poppins(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w300),
-            ),
-          ],
+              Text(
+                title,
+                style: GoogleFonts.poppins(
+                  color: const Color.fromARGB(255, 136, 133, 134),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 25,
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Image.asset(
+                'assets/images/Exercise_example_video.png',
+              ),
+              const SizedBox(height: 15),
+              Text(
+                'Description',
+                style: GoogleFonts.poppins(
+                    color: const Color.fromARGB(255, 189, 183, 185),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(height: 15),
+              Text(
+                description,
+                style: GoogleFonts.poppins(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w300),
+              ),
+              const SizedBox(height: 25),
+              Text(
+                'How to',
+                style: GoogleFonts.poppins(
+                    color: const Color.fromARGB(255, 189, 183, 185),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(height: 15),
+              Text(
+                howto,
+                style: GoogleFonts.poppins(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w300),
+              ),
+            ],
+          ),
         ),
       ),
     );

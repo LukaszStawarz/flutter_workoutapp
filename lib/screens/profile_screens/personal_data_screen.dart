@@ -30,46 +30,53 @@ class PersonalDataScreen extends StatelessWidget {
             ),
           ),
           body: userDataGetterProvider.userData != null
-              ? Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              'assets/images/profile_image.png',
-                              scale: 1.5,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        TextContainerWidget(
-                            text: 'Name: ',
-                            userData: '${userData!['user_name']}'),
-                        TextContainerWidget(
-                            text: 'Surname: ',
-                            userData: '${userData['user_lastname']}'),
-                        TextContainerWidget(
-                            text: 'Phone number: ',
-                            userData: '${userData['user_phone_number']}'),
-                        TextContainerWidget(
-                            text: 'Email: ',
-                            userData: '${userData['user_email']}'),
-                        TextContainerWidget(
-                            text: 'Gender: ',
-                            userData: '${userData['gender']}'),
-                        TextContainerWidget(
-                            text: 'Weight: ',
-                            userData: '${userData['weight']}'),
-                        TextContainerWidget(
-                            text: 'Height: : ',
-                            userData: '${userData['height']}'),
-                      ],
+              ? Container(
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/bg_example2.png'),
+                        fit: BoxFit.cover),
+                  ),
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/profile_image.png',
+                                scale: 1.5,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          TextContainerWidget(
+                              text: 'Name: ',
+                              userData: '${userData!['user_name']}'),
+                          TextContainerWidget(
+                              text: 'Surname: ',
+                              userData: '${userData['user_lastname']}'),
+                          TextContainerWidget(
+                              text: 'Phone number: ',
+                              userData: '${userData['user_phone_number']}'),
+                          TextContainerWidget(
+                              text: 'Email: ',
+                              userData: '${userData['user_email']}'),
+                          TextContainerWidget(
+                              text: 'Gender: ',
+                              userData: '${userData['gender']}'),
+                          TextContainerWidget(
+                              text: 'Weight: ',
+                              userData: '${userData['weight']}'),
+                          TextContainerWidget(
+                              text: 'Height: : ',
+                              userData: '${userData['height']}'),
+                        ],
+                      ),
                     ),
                   ),
                 )

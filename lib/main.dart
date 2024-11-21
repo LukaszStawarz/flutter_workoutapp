@@ -11,7 +11,7 @@ import 'package:gymapp/providers/user_workout_provider.dart';
 import 'package:gymapp/screens/login/log_in_screen.dart';
 import 'package:gymapp/screens/login/sign_up_details_screen.dart';
 import 'package:gymapp/screens/login/sign_up_screen.dart';
-import 'package:gymapp/screens/login/su_details_screen2.dart';
+import 'package:gymapp/screens/login/sign_up_details_screen2.dart';
 import 'package:gymapp/screens/main_screen_widget.dart';
 import 'package:gymapp/screens/login/start_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -34,7 +34,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  //setup();
+  setup();
   runApp(const GymApp());
 }
 
@@ -48,7 +48,7 @@ class GymApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => PlanProvider()..getPlans(),
         ),
-        ChangeNotifierProvider(
+        ChangeNotifierProvider<ExerciseProvider>(
           create: (_) => ExerciseProvider()..getExercises(),
         ),
         ChangeNotifierProvider(

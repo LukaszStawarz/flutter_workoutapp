@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gymapp/models/breathing.dart';
 import 'package:gymapp/models/cardio.dart';
 import 'package:gymapp/models/exercises.dart';
@@ -23,13 +26,7 @@ class ExerciseProvider extends ChangeNotifier {
 
     for (final doc in exerciseReference.docs) {
       Map<String, dynamic> documentData = doc.data();
-      // documentData['id'] = doc.id;
-      // List<Exercises> getYoga() {
-      //   return exercisesList
-      //       .where(
-      //         (element) => element.type == 'Yoga',
-      //       )
-      //       .toList();
+
       if (documentData['type'] == 'Cardio') {
         final Cardio cardio = Cardio.fromJson(documentData);
         cardioList.add(cardio);
@@ -48,8 +45,20 @@ class ExerciseProvider extends ChangeNotifier {
       }
 
       final Exercises exercises = Exercises.fromJson(documentData);
+      exercises.id = doc.id;
       exercisesList.add(exercises);
     }
+    // log('${exercisesList.map(
+    //   (e) {
+    //     return {
+    //       '\'description\'': '\'${e.description}\'',
+    //       '\'howto\'': '\'${e.howto}\'',
+    //       '\'title\'': '\'${e.title}\'',
+    //       '\'type\'': '\'${e.type}\'',
+    //     };
+    //   },
+    // ).toList()}');
+
     isLoading = false;
     notifyListeners();
   }

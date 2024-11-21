@@ -186,7 +186,7 @@ class _StartedPlanScreenState extends State<StartedPlanScreen> {
                         style: const TextStyle(fontSize: 16),
                       )
                     else
-                      const Text('brawooo')
+                      const Text('No more exercises')
                   ],
                 ),
               ),

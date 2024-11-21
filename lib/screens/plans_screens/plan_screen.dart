@@ -24,33 +24,40 @@ class PlanScreen extends StatelessWidget {
     final List<Plan> planList = planProvider.plans;
 
     return Scaffold(
-      body: SafeArea(
-        child: GridView(
-          padding: const EdgeInsets.all(15),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 1,
-            childAspectRatio: 5,
-            mainAxisSpacing: 15,
-          ),
-          children: [
-            ...planList.map(
-              (plan) => PlanWidget(
-                onSelectPlan: () {
-                  _selectPlan(context, plan);
-                },
-                plan: plan,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/bg_example5.png'),
+              fit: BoxFit.cover),
+        ),
+        child: SafeArea(
+          child: GridView(
+            padding: const EdgeInsets.all(15),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1,
+              childAspectRatio: 5,
+              mainAxisSpacing: 15,
+            ),
+            children: [
+              ...planList.map(
+                (plan) => PlanWidget(
+                  onSelectPlan: () {
+                    _selectPlan(context, plan);
+                  },
+                  plan: plan,
+                ),
               ),
-            ),
-            YourPlansWidget(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => YourPlansScreen(),
-                  ),
-                );
-              },
-            ),
-          ],
+              YourPlansWidget(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => YourPlansScreen(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

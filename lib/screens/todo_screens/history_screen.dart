@@ -40,22 +40,29 @@ class _HistoryScreenState extends State<HistoryScreen> {
           ? const Center(
               child: CircularProgressIndicator(),
             )
-          : SingleChildScrollView(
-              child: Column(
-                children: [
-                  ...workoutList.map(
-                    (userExercise) {
-                      return HistoryContainerWidget(
-                        plan: plans
-                            .where(
-                              (element) => element.id == userExercise.planId,
-                            )
-                            .first,
-                        userExercise: userExercise,
-                      );
-                    },
-                  )
-                ],
+          : Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/images/bg_example4.png'),
+                    fit: BoxFit.cover),
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ...workoutList.map(
+                      (userExercise) {
+                        return HistoryContainerWidget(
+                          plan: plans
+                              .where(
+                                (element) => element.id == userExercise.planId,
+                              )
+                              .first,
+                          userExercise: userExercise,
+                        );
+                      },
+                    )
+                  ],
+                ),
               ),
             ),
     );

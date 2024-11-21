@@ -14,7 +14,7 @@ class YourPlansScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Align(
-            alignment: Alignment.center,
+            alignment: Alignment.topCenter,
             child: IconButton(
                 onPressed: () {
                   Navigator.of(context).push(

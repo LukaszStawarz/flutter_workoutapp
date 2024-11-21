@@ -3,17 +3,21 @@ part 'exercises.g.dart';
 
 @JsonSerializable()
 class Exercises {
-  const Exercises({
+  Exercises({
     required this.howto,
     required this.description,
     required this.type,
     required this.title,
+    this.id,
   });
 
   final String? title;
   final String? howto;
   final String? description;
   final String? type;
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  String? id = '';
 
   factory Exercises.fromJson(Map<String, dynamic> json) =>
       _$ExercisesFromJson(json);
