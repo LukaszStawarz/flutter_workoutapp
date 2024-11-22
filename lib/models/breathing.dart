@@ -5,13 +5,15 @@ part 'breathing.g.dart';
 class Breathing {
   const Breathing(
     this.howto,
-    this.description, {
+    this.description,
+    this.videourl, {
     required this.title,
   });
 
   final String title;
   final String howto;
   final String description;
+  final String videourl;
 
   factory Breathing.fromJson(Map<String, dynamic> json) =>
       _$BreathingFromJson(json);

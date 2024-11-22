@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/models/breathing.dart';
 import 'package:gymapp/models/cardio.dart';
+import 'package:gymapp/models/exercises.dart';
 import 'package:gymapp/models/strength.dart';
 import 'package:gymapp/models/warmup.dart';
 import 'package:gymapp/models/yoga.dart';
@@ -15,11 +16,32 @@ class ExerciseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final exerciseProvider = context.watch<ExerciseProvider>();
-    final List<Yoga> yoga = exerciseProvider.yogaList;
-    final List<Breathing> breathing = exerciseProvider.breathingList;
-    final List<Cardio> cardio = exerciseProvider.cardioList;
-    final List<WarmUp> warmup = exerciseProvider.warmUpList;
-    final List<Strength> strength = exerciseProvider.strengthList;
+    final List<Exercises> yoga = exerciseProvider.exercisesList
+        .where(
+          (element) => element.type == 'Yoga',
+        )
+        .toList();
+    final List<Exercises> breathing = exerciseProvider.exercisesList
+        .where(
+          (element) => element.type == 'Breathing',
+        )
+        .toList();
+    final List<Exercises> cardio = exerciseProvider.exercisesList
+        .where(
+          (element) => element.type == 'Cardio',
+        )
+        .toList();
+    final List<Exercises> warmup = exerciseProvider.exercisesList
+        .where(
+          (element) => element.type == 'Warmup',
+        )
+        .toList();
+    final List<Exercises> strength = exerciseProvider.exercisesList
+        .where(
+          (element) => element.type == 'Strength',
+        )
+        .toList();
+    final Exercises exercise;
 
     return Scaffold(
       body: exerciseProvider.isLoading
@@ -73,6 +95,8 @@ class ExerciseScreen extends StatelessWidget {
                                                   title: e.title,
                                                   description: e.description,
                                                   howto: e.howto,
+                                                  videourl: e.videourl,
+                                                  exercises: breathing,
                                                 ),
                                               ),
                                             );
@@ -121,6 +145,8 @@ class ExerciseScreen extends StatelessWidget {
                                                   title: e.title,
                                                   description: e.description,
                                                   howto: e.howto,
+                                                  videourl: e.videourl,
+                                                  exercises: cardio,
                                                 ),
                                               ),
                                             );
@@ -167,6 +193,8 @@ class ExerciseScreen extends StatelessWidget {
                                                   title: e.title,
                                                   description: e.description,
                                                   howto: e.howto,
+                                                  videourl: e.videourl,
+                                                  exercises: strength,
                                                 ),
                                               ),
                                             );
@@ -213,6 +241,8 @@ class ExerciseScreen extends StatelessWidget {
                                                   title: e.title,
                                                   description: e.description,
                                                   howto: e.howto,
+                                                  videourl: e.videourl,
+                                                  exercises: warmup,
                                                 ),
                                               ),
                                             );
@@ -259,6 +289,8 @@ class ExerciseScreen extends StatelessWidget {
                                                   title: e.title,
                                                   description: e.description,
                                                   howto: e.howto,
+                                                  videourl: e.videourl,
+                                                  exercises: yoga,
                                                 ),
                                               ),
                                             );

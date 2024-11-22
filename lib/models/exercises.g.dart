@@ -7,10 +7,11 @@ part of 'exercises.dart';
 // **************************************************************************
 
 Exercises _$ExercisesFromJson(Map<String, dynamic> json) => Exercises(
-      howto: json['howto'] as String?,
-      description: json['description'] as String?,
-      type: json['type'] as String?,
-      title: json['title'] as String?,
+      howto: json['howto'] as String,
+      description: json['description'] as String,
+      type: json['type'] as String,
+      title: json['title'] as String,
+      videourl: json['videourl'] as String,
     );
 
 Map<String, dynamic> _$ExercisesToJson(Exercises instance) => <String, dynamic>{
@@ -18,4 +19,5 @@ Map<String, dynamic> _$ExercisesToJson(Exercises instance) => <String, dynamic>{
       'howto': instance.howto,
       'description': instance.description,
       'type': instance.type,
+      'videourl': instance.videourl,
     };

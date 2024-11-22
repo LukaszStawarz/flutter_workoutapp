@@ -451,7 +451,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Extend your arms parallel to the floor and hold for 30 seconds to 1 minute. Repeat on the other side.',
     'title': 'Warrior II',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FWarrior2.gif?alt=media&token=a679b215-15f2-4d31-9d1c-ec6687ecaf33'
   },
   // {
   //   'description':
@@ -467,7 +469,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Extend your arms forward and straighten your legs to form a V shape with your body. Hold for 30 seconds to 1 minute, engaging your core.',
     'title': 'Boat Pose',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FBoatPose.gif?alt=media&token=36bcb6e9-6c60-4fa5-9fd6-a9276f7c43f9'
   },
   {
     'description':
@@ -475,7 +479,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Warm-up for 5 minutes at a low resistance, then cycle for 20-30 minutes at a moderate to high intensity. Cool down for 5 minutes.',
     'title': 'Cycling',
-    'type': 'Cardio'
+    'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2Fcycling.gif?alt=media&token=ef0272e6-bc11-4cc0-b376-fb8af9d71601'
   },
   {
     'description':
@@ -483,7 +489,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Lower the dumbbells out to your sides in a wide arc until you feel a stretch in your chest, then bring them back to the starting position. Perform 3 sets of 10-15 reps.',
     'title': 'Chest Flyes',
-    'type': 'Strength'
+    'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FChestFlyes.gif?alt=media&token=b3456358-119f-4f94-ac80-4f63a9a316b6'
   },
   // {
   //   'description':
@@ -499,7 +507,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Hold for 30 seconds to 1 minute, focusing on your balance and breathing. Repeat on the other side.',
     'title': 'Tree Pose',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FTreePose.gif?alt=media&token=c7b97101-a2f0-4b43-b763-0283bf81149c'
   },
   {
     'description':
@@ -507,7 +517,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Press your hips forward and lean back, reaching for your heels with your hands. Hold for 30 seconds to 1 minute, keeping your chest lifted and breathing deeply.',
     'title': 'Camel Pose',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FCamelPose.gif?alt=media&token=3379c0b6-caa9-487e-87c4-93dc0df6c327'
   },
   {
     'description':
@@ -515,7 +527,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'As you lunge, twist your torso to the right. Return to the starting position and repeat on the other side. Perform for 1-2 minutes.',
     'title': 'Lunges',
-    'type': 'Warmup'
+    'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FLunges.gif?alt=media&token=d93412fc-eaa9-4598-9cfe-55dc18b5a4f0'
   },
   {
     'description':
@@ -523,7 +537,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Press the dumbbells overhead until your arms are fully extended, then lower them back to shoulder height. Perform 3 sets of 8-12 reps.',
     'title': 'Dumbbell Shoulder Press',
-    'type': 'Strength'
+    'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FDumbbellShoulderPress.gif?alt=media&token=1902f005-c3ba-4495-a04e-15a983717d67'
   },
   {
     'description':
@@ -531,7 +547,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Pull the bar down to your chest, then slowly return to the starting position. Perform 3 sets of 8-12 reps.',
     'title': 'Lat Pulldown',
-    'type': 'Strength'
+    'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FLatPulldown.gif?alt=media&token=0e62211c-8231-42e0-b5d1-04d4ab8c4192'
   },
   {
     'description':
@@ -539,7 +557,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Inhale and lengthen your spine. Exhale and hinge at your hips to reach for your feet, shins, or ankles. Hold for 1-3 minutes, breathing deeply.',
     'title': 'Seated Forward Bend',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FSeatedForwardBend.gif?alt=media&token=802bb2e1-0900-4354-ae02-4026ca55db41'
   },
   {
     'description':
@@ -547,7 +567,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Move your legs in a gliding motion and push/pull the handles for 20-30 minutes at a moderate to high intensity.',
     'title': 'Elliptical Training',
-    'type': 'Cardio'
+    'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FEllipticalTraining.gif?alt=media&token=6e67e918-9a8e-4ef0-a9ed-aae39cdb10bf'
   },
   {
     'description':
@@ -555,7 +577,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Reach your right hand down to your shin, ankle, or the floor while extending your left arm toward the ceiling. Hold for 30 seconds to 1 minute. Repeat on the other side.',
     'title': 'Triangle Pose',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FTrianglePose.gif?alt=media&token=9027cd14-7f71-47e5-9cb7-8e567669c2c5'
   },
   {
     'description':
@@ -563,7 +587,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Hold for 1-3 minutes, focusing on deep breathing and engaging your core.',
     'title': 'Downward Dog',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FDownwardDog.gif?alt=media&token=6962a896-877c-4687-8bd2-ea60d47e9eaa'
   },
   {
     'description':
@@ -571,7 +597,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Lower the bar to your chest, then press it back up to the starting position. Perform 3 sets of 8-12 reps',
     'title': 'Bench Press',
-    'type': 'Strength'
+    'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FBenchPress.gif?alt=media&token=343df0f5-10b1-46ee-b21e-a37c69dbeb99'
   },
   {
     'description':
@@ -579,7 +607,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Perform for 1-3 minutes, focusing on speed and technique. Rest and repeat for a total of 10-20 minutes.',
     'title': 'Shadow Boxing',
-    'type': 'Cardio'
+    'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FShadowBoxing.gif?alt=media&token=109362d4-929c-4b75-a01b-cc042b4c7723'
   },
   {
     'description':
@@ -587,7 +617,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Make small circles with your arms, gradually increasing the size. Perform for 1 minute in each direction.',
     'title': 'Arm Circles',
-    'type': 'Warmup'
+    'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FArmCircles.gif?alt=media&token=9871e661-26c4-429d-8838-b9c04f820cfa'
   },
   {
     'description':
@@ -595,7 +627,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Lower your hips toward the floor and extend your arms forward. Hold for 1-3 minutes, then switch sides.',
     'title': 'Pigeon Pose',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FPigeonPose.gif?alt=media&token=4d96a343-1021-427d-8d25-0ef446c305e4'
   },
   {
     'description':
@@ -603,7 +637,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Step down and repeat for 1-3 minutes, rest, and repeat for a total of 10-20 minutes.',
     'title': 'Box Jumps',
-    'type': 'Cardio'
+    'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FBoxJumps.gif?alt=media&token=377d9679-0c61-44d4-9773-156b1f6730f9'
   },
   {
     'description':
@@ -611,7 +647,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Push the platform away from you by extending your legs, then slowly return to the starting position. Perform 3 sets of 10-15 reps.',
     'title': 'Leg Press',
-    'type': 'Strength'
+    'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FLegPress.gif?alt=media&token=92acefc7-05ba-4422-b088-6411398480ec'
   },
   {
     'description':
@@ -619,7 +657,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Curl your legs up as far as possible, then slowly lower them back down. Perform 3 sets of 10-15 reps.',
     'title': 'Leg Curl',
-    'type': 'Strength'
+    'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FLegCurl.gif?alt=media&token=042739a9-e21e-4b2a-bc7b-4ded0d89663b'
   },
   {
     'description':
@@ -627,7 +667,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Inhale through your left nostril, then close it with your right ring finger. Exhale through your right nostril. Inhale through your right nostril, close it, and exhale through your left nostril. Continue for 5-10 minutes.',
     'title': 'Alternate Nostril Breathing',
-    'type': 'Breathing'
+    'type': 'Breathing',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FAlternateNostrilBreathing.gif?alt=media&token=102175cb-643b-48a8-bdb1-ecd298267441'
   },
   {
     'description':
@@ -635,14 +677,18 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Press into your feet and lift your hips toward the ceiling. Hold for 30 seconds to 1 minute, then slowly lower your hips back to the floor.',
     'title': 'Bridge Pose',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FBridgePose.gif?alt=media&token=1ba5e6a0-8059-4854-be67-444cd414882d'
   },
   {
     'description':
         'Stand with your feet together and arms at your sides. Jump up, spreading your legs shoulder-width apart and raising your arms overhead.',
     'howto': 'Return to the starting position and repeat for 1-3 minutes.',
     'title': 'Jumping Jacks',
-    'type': 'Warmup'
+    'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FJumpingJacks.gif?alt=media&token=7752aad4-89c3-4289-934d-ae71e5e8124c'
   },
   {
     'description':
@@ -650,7 +696,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Continue alternating knees as quickly as possible for 1-3 minutes. Rest and repeat for a total of 10-20 minutes.',
     'title': 'High Knees',
-    'type': 'Cardio'
+    'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FHighKnees.gif?alt=media&token=2be96450-0958-4164-8080-646507ed5a45'
   },
   {
     'description':
@@ -658,7 +706,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Lean forward, shifting your weight onto your hands, and lift your feet off the ground. Hold for 10-30 seconds, focusing on your balance and breathing.',
     'title': 'Crow Pose',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FCrowPose.gif?alt=media&token=d2583417-afdf-4c37-b656-fafe92bb0e62'
   },
   {
     'description':
@@ -666,14 +716,18 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Keep your body in a straight line from head to heels and hold the position for 30-60 seconds. Perform 3 sets.',
     'title': 'Plank',
-    'type': 'Strength'
+    'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FPlank.gif?alt=media&token=031a195d-c914-433d-99ad-e431f9305fc2'
   },
   {
     'description':
         'Kneel on the floor, sit back on your heels, and stretch your arms forward on the ground.',
     'howto': 'Hold for 1-3 minutes, breathing deeply and relaxing your body.',
     'title': 'Child’s Pose',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FChildsPose.gif?alt=media&token=764775ae-57c2-4ead-9611-ce1906879612'
   },
   {
     'description':
@@ -681,7 +735,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Kick your left leg up to try to touch your right hand. Lower your leg and repeat with the other leg. Continue alternating legs for 1-2 minutes.',
     'title': 'High Kicks',
-    'type': 'Warmup'
+    'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FHighKicks.gif?alt=media&token=4f1e6d45-92fb-4ea0-8a25-9852862b6248'
   },
   {
     'description':
@@ -689,7 +745,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Warm-up for 5 minutes, then run for 20-30 minutes at a steady pace. Cool down with a 5-minute walk.',
     'title': 'Treadmill Running',
-    'type': 'Cardio'
+    'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FTreadmillRunning.gif?alt=media&token=5d71723c-35aa-4367-bd78-2c209b51f8c1'
   },
   {
     'description':
@@ -697,7 +755,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Perform 10-15 swings on each leg, focusing on increasing the range of motion.',
     'title': 'Leg Swings',
-    'type': 'Warmup'
+    'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FLegSwing.gif?alt=media&token=c35d10c7-d0b5-4431-be78-4c956f81868c'
   },
   {
     'description':
@@ -705,7 +765,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Inhale deeply through your nose, allowing your abdomen to rise. Exhale slowly through your mouth. Repeat for 5-10 minutes.',
     'title': 'Diaphragmatic Breathing',
-    'type': 'Breathing'
+    'type': 'Breathing',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FAlternateNostrilBreathing.gif?alt=media&token=102175cb-643b-48a8-bdb1-ecd298267441'
   },
   {
     'description':
@@ -713,7 +775,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Inhale deeply through your nose, filling your lungs and allowing your abdomen to rise. Exhale slowly through your mouth. Continue for 5-10 minutes, focusing on the rise and fall of your abdomen.',
     'title': 'Deep Breathing',
-    'type': 'Breathing'
+    'type': 'Breathing',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FAlternateNostrilBreathing.gif?alt=media&token=102175cb-643b-48a8-bdb1-ecd298267441'
   },
   {
     'description':
@@ -721,7 +785,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         ' Start with small, quick jumps. Perform for 1-3 minutes, rest, and repeat for a total of 10-20 minutes.',
     'title': 'Jump Rope',
-    'type': 'Cardio'
+    'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FJumpRope.gif?alt=media&token=bcbd94f1-daf1-481d-8231-385ec6aa7fe5'
   },
   {
     'description':
@@ -729,21 +795,27 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Inhale slowly through your nose for 2 counts. Purse your lips as if you were going to whistle, and exhale slowly and gently through your pursed lips for 4 counts. Repeat for 5-10 minutes.',
     'title': 'Pursed Lip Breathing',
-    'type': 'Breathing'
+    'type': 'Breathing',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FAlternateNostrilBreathing.gif?alt=media&token=102175cb-643b-48a8-bdb1-ecd298267441'
   },
   {
     'description': 'Sit or lie down comfortably. Close your eyes and relax.',
     'howto':
         'Inhale through your nose for 4 seconds, hold your breath for 7 seconds, and exhale through your mouth for 8 seconds. Repeat for 4-8 cycles.',
     'title': '4-7-8 Breathing',
-    'type': 'Breathing'
+    'type': 'Breathing',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FAlternateNostrilBreathing.gif?alt=media&token=102175cb-643b-48a8-bdb1-ecd298267441'
   },
   {
     'description': 'Stand with your feet hip-width apart, hands on your hips.',
     'howto':
         'Make large circles with your hips, rotating clockwise for 30 seconds to 1 minute, then counterclockwise for another 30 seconds to 1 minute.',
     'title': 'Hip Circles',
-    'type': 'Warmup'
+    'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FHipCircles.gif?alt=media&token=973a1b13-1d6e-4702-864b-8349ead2ed10'
   },
   {
     'description':
@@ -751,7 +823,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Lift the bar by extending your hips and knees, keeping your back straight. Lower the bar back to the floor. Perform 3 sets of 6-10 reps.',
     'title': 'Deadlifts',
-    'type': 'Strength'
+    'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FDeadlift.gif?alt=media&token=bc4e3ba4-43bc-45f2-9875-a8ea7368d037'
   },
   {
     'description':
@@ -759,7 +833,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Swing your arms forward and across your chest, then swing them back out to the sides. Continue swinging your arms in a controlled manner for 1-2 minutes.',
     'title': 'Arm Swings',
-    'type': 'Warmup'
+    'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FArmSwings.gif?alt=media&token=980fc5c6-2fbb-4491-9a26-83704012f7ae'
   },
   {
     'description':
@@ -767,7 +843,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Pull your body up until your chin is above the bar, then lower yourself back down. Perform 3 sets of 5-10 reps.',
     'title': 'Pull-Ups',
-    'type': 'Strength'
+    'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FPullUps.gif?alt=media&token=6daf5da2-aa11-4970-bc02-a5ce9f382399'
   },
   {
     'description':
@@ -775,7 +853,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Squat down until your thighs are parallel to the floor, then return to standing. Perform 3 sets of 10-15 reps.',
     'title': 'Squats',
-    'type': 'Strength'
+    'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FSquats.gif?alt=media&token=ee33119a-3ab3-4e20-8685-af92daca4fc3'
   },
   {
     'description':
@@ -783,7 +863,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Twist your torso to the right, then to the left, keeping your hips facing forward. Continue twisting for 1-2 minutes.',
     'title': 'Torso Twist',
-    'type': 'Warmup'
+    'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FTorsoTwist.gif?alt=media&token=1027021a-6c45-4b3b-b615-61c5963adbd6'
   },
   {
     'description':
@@ -791,7 +873,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Inhale and arch your back, lifting your head and tailbone (Cow Pose). Exhale and round your spine, tucking your chin and tailbone (Cat Pose). Repeat for 1-3 minutes.',
     'title': 'Cat-Cow Pose',
-    'type': 'Yoga'
+    'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FCatCowPose.gif?alt=media&token=c340eb19-1f97-47b8-9d6b-cf5e1d04f854'
   },
   {
     'description':
@@ -799,7 +883,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Lower your body by bending your elbows, then press back up to the starting position. Perform 3 sets of 8-12 reps.',
     'title': 'Tricep Dips',
-    'type': 'Strength'
+    'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FTricepDips.gif?alt=media&token=b054aefa-181c-46cc-ae37-3853c51df1e1'
   },
   {
     'description':
@@ -807,7 +893,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Push with your legs, lean back slightly, and pull the handle towards your chest. Return to the starting position in reverse order. Row for 20-30 minutes.',
     'title': 'Rowing Machine',
-    'type': 'Cardio'
+    'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FRowingMachine.gif?alt=media&token=fe158bb5-2eaa-48fb-b2b1-f495c4279683'
   },
   {
     'description':
@@ -815,7 +903,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Maintain a steady pace for 10-20 minutes. For added intensity, increase your speed or skip steps.',
     'title': 'Stair Climbing',
-    'type': 'Cardio'
+    'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FStairsClimbing.gif?alt=media&token=0f0f7069-b3bc-48c2-80e1-db7165cebc43'
   },
   {
     'description':
@@ -823,7 +913,9 @@ final List<Map<String, dynamic>> exerciseData = [
     'howto':
         'Inhale through your nose for 4 seconds, hold your breath for 4 seconds, exhale through your mouth for 4 seconds, and hold your breath again for 4 seconds. Repeat for 5-10 minutes.',
     'title': 'Box Breathing',
-    'type': 'Breathing'
+    'type': 'Breathing',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FAlternateNostrilBreathing.gif?alt=media&token=102175cb-643b-48a8-bdb1-ecd298267441'
   },
   {
     'description':
@@ -832,6 +924,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Perform continuously for 1-3 minutes, rest, and repeat for a total of 10-20 minutes.',
     'title': 'Burpees',
     'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FBurpees.gif?alt=media&token=845c8840-dbe0-49e2-a963-414972e08cc6'
   },
   {
     'description':
@@ -840,6 +934,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Start in a plank position. Alternate bringing your knees toward your chest as quickly as possible while keeping your back flat and core engaged.',
     'title': 'Mountain Climbers',
     'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FMountainClimbers.gif?alt=media&token=aab80459-41d1-406a-9274-a9b1f14dde5a'
   },
   {
     'description':
@@ -848,6 +944,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Jump sideways from one foot to the other, landing softly while swinging the opposite arm across your body for balance.',
     'title': 'Skaters',
     'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FSkaters.gif?alt=media&token=8c747797-f16f-447f-b51f-a53df74aebf5'
   },
   {
     'description':
@@ -856,6 +954,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Maintain a relaxed, upright posture and jog at a comfortable pace, focusing on even breathing and consistent strides.',
     'title': 'Jogging',
     'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FJogging.gif?alt=media&token=d1427432-4632-4efe-b747-9c7384d0b7a4'
   },
   {
     'description':
@@ -864,6 +964,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Step onto a sturdy box or bench with one foot, drive through your heel to stand, then lower yourself back down with control. Alternate legs.',
     'title': 'Box Step-Ups',
     'type': 'Cardio',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FBoxStepUps.gif?alt=media&token=9a3e1c52-4c55-4572-852f-615e47346ca9'
   },
   {
     'description': 'A calming breathing exercise to reduce stress and anxiety.',
@@ -871,6 +973,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Inhale deeply through the nose. Exhale slowly while making a humming sound, keeping lips closed and focusing on the vibration.',
     'title': 'Humming Bee Breath',
     'type': 'Breathing',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FAlternateNostrilBreathing.gif?alt=media&token=102175cb-643b-48a8-bdb1-ecd298267441'
   },
   {
     'description':
@@ -879,6 +983,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Sit comfortably, exhale sharply through the nose while contracting your abdomen, and let the inhale happen passively. Repeat rhythmically.',
     'title': 'Kapalabhati',
     'type': 'Breathing',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FAlternateNostrilBreathing.gif?alt=media&token=102175cb-643b-48a8-bdb1-ecd298267441'
   },
   {
     'description': 'A rapid breathing exercise that boosts energy and focus.',
@@ -886,6 +992,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Sit tall, take short, forceful exhales through the nose, and let the inhales come naturally. Maintain a steady rhythm.',
     'title': 'Breath of Fire',
     'type': 'Breathing',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FAlternateNostrilBreathing.gif?alt=media&token=102175cb-643b-48a8-bdb1-ecd298267441'
   },
   {
     'description':
@@ -894,6 +1002,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Inhale deeply through your nose, then open your mouth wide and exhale forcefully while sticking your tongue out.',
     'title': 'Lion’s Breath',
     'type': 'Breathing',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FAlternateNostrilBreathing.gif?alt=media&token=102175cb-643b-48a8-bdb1-ecd298267441'
   },
   {
     'description':
@@ -902,6 +1012,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Step forward with one leg, lowering your hips until both knees are bent at 90 degrees. Push through the front heel to step forward with the other leg.',
     'title': 'Walking Lunges',
     'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FLunges.gif?alt=media&token=d93412fc-eaa9-4598-9cfe-55dc18b5a4f0'
   },
   {
     'description': 'A cardio warm-up that targets the hamstrings and glutes.',
@@ -909,6 +1021,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Jog in place, kicking your heels up towards your glutes with each step. Swing your arms naturally to maintain rhythm.',
     'title': 'Butt Kicks',
     'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FButtKicks.gif?alt=media&token=8c1162d9-23b3-4771-8732-accc8a6acc4e'
   },
   {
     'description':
@@ -917,6 +1031,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Stand tall, kick one leg straight in front of you while reaching the opposite hand towards your toes. Alternate legs with each step.',
     'title': 'Toy Soldiers',
     'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FToySoldiers.gif?alt=media&token=3dc4bcf9-aff9-4d65-a53f-16a445d24e44'
   },
   {
     'description':
@@ -925,15 +1041,18 @@ final List<Map<String, dynamic>> exerciseData = [
         'From standing, bend forward to touch the ground, walk your hands out to a plank, then walk them back towards your feet and stand up.',
     'title': 'Inchworm',
     'type': 'Warmup',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FInchworm.gif?alt=media&token=7950f0a0-60af-4479-abdf-7a924900beda'
   },
-  {
-    'description':
-        'A yoga flow that warms up the spine and promotes flexibility.',
-    'howto':
-        'Start on all fours, arch your back as you look up (Cow), then round your spine while tucking your chin (Cat). Alternate between the two.',
-    'title': 'Cat-Cow Stretch',
-    'type': 'Yoga',
-  },
+  // {
+  //   'description':
+  //       'A yoga flow that warms up the spine and promotes flexibility.',
+  //   'howto':
+  //       'Start on all fours, arch your back as you look up (Cow), then round your spine while tucking your chin (Cat). Alternate between the two.',
+  //   'title': 'Cat-Cow Stretch',
+  //   'type': 'Yoga',
+  //   'videourl': ''
+  // },
   {
     'description':
         'A relaxation pose that encourages deep rest and mindfulness.',
@@ -941,6 +1060,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Lie on your back with arms and legs relaxed, palms facing up. Focus on slow, deep breathing and let your body completely relax.',
     'title': 'Corpse Pose',
     'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FCorpsePose.gif?alt=media&token=dca5dd21-82e2-494b-abc1-5e7e3739ca0f'
   },
   // {
   //   'description':
@@ -957,6 +1078,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Lie face down, place hands under shoulders, and lift your chest while keeping your elbows slightly bent and shoulders relaxed.',
     'title': 'Cobra Pose',
     'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FCobraPose.gif?alt=media&token=7d94b244-c88d-496e-a032-b5608a954e7a'
   },
   {
     'description':
@@ -965,6 +1088,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Stand tall with feet together, arms by your sides, and shoulders relaxed. Distribute your weight evenly across your feet.',
     'title': 'Mountain Pose',
     'type': 'Yoga',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FMountainPose.gif?alt=media&token=fe14f139-edac-48d0-acc5-a291911255cd'
   },
   {
     'description': 'An isolation exercise targeting the biceps.',
@@ -972,6 +1097,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Hold dumbbells at your sides, palms facing forward. Curl the weights up towards your shoulders, then lower them slowly.',
     'title': 'Biceps Curls',
     'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FBicepsCurls.gif?alt=media&token=24b22068-4a63-4fbc-b673-c64098b64fff'
   },
   {
     'description': 'A compound exercise for the back and arms.',
@@ -979,6 +1106,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Bend forward at the hips, hold weights with arms extended. Pull the weights towards your torso, squeezing your shoulder blades, then lower them back down.',
     'title': 'Bent-Over Row',
     'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FBendOverRows.gif?alt=media&token=868e4792-7278-4df2-82c7-e2e032524986'
   },
   {
     'description':
@@ -987,6 +1116,8 @@ final List<Map<String, dynamic>> exerciseData = [
         'Start in a plank position, lower your body until your chest almost touches the floor, then push back up.',
     'title': 'Push-Ups',
     'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FPushUps.gif?alt=media&token=de02bc6d-8f6c-492d-a40c-9c5e2170c8f7'
   },
   {
     'description': 'An isolation exercise that strengthens the triceps.',
@@ -994,5 +1125,7 @@ final List<Map<String, dynamic>> exerciseData = [
         'Hold a dumbbell with both hands, extend your arms overhead. Lower the weight behind your head by bending your elbows, then straighten them back up.',
     'title': 'Tricep Extensions',
     'type': 'Strength',
+    'videourl':
+        'https://firebasestorage.googleapis.com/v0/b/gymappflutter-c95ce.appspot.com/o/gifs%2FTricepExtensions.gif?alt=media&token=0ce8196a-cfb2-4b97-8d76-7b782d6a4eb2'
   },
 ];

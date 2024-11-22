@@ -5,13 +5,15 @@ part 'warmup.g.dart';
 class WarmUp {
   const WarmUp(
     this.howto,
-    this.description, {
+    this.description,
+    this.videourl, {
     required this.title,
   });
 
   final String title;
   final String howto;
   final String description;
+  final String videourl;
 
   factory WarmUp.fromJson(Map<String, dynamic> json) => _$WarmUpFromJson(json);
 

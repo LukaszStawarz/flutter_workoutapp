@@ -8,13 +8,15 @@ class Exercises {
     required this.description,
     required this.type,
     required this.title,
+    required this.videourl,
     this.id,
   });
 
-  final String? title;
-  final String? howto;
-  final String? description;
-  final String? type;
+  final String title;
+  final String howto;
+  final String description;
+  final String type;
+  final String videourl;
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   String? id = '';

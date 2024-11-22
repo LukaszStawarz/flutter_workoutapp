@@ -5,13 +5,15 @@ part 'yoga.g.dart';
 class Yoga {
   const Yoga(
     this.howto,
-    this.description, {
+    this.description,
+    this.videourl, {
     required this.title,
   });
 
   final String title;
   final String howto;
   final String description;
+  final String videourl;
 
   factory Yoga.fromJson(Map<String, dynamic> json) => _$YogaFromJson(json);
 

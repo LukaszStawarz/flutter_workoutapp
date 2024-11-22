@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gymapp/models/exercises.dart';
+import 'package:video_player/video_player.dart';
 
-class ExerciseDetailsScreen extends StatelessWidget {
+class ExerciseDetailsScreen extends StatefulWidget {
   const ExerciseDetailsScreen(
       {super.key,
       required this.title,
       required this.description,
-      required this.howto});
+      required this.howto,
+      required this.videourl,
+      required this.exercises});
   final String title;
   final String description;
   final String howto;
+  final String videourl;
+  final List<Exercises> exercises;
+  @override
+  State<ExerciseDetailsScreen> createState() => _ExerciseDetailsScreenState();
+}
+
+class _ExerciseDetailsScreenState extends State<ExerciseDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +43,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                title,
+                widget.title,
                 style: GoogleFonts.poppins(
                   color: const Color.fromARGB(255, 136, 133, 134),
                   fontWeight: FontWeight.w500,
@@ -42,8 +53,8 @@ class ExerciseDetailsScreen extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Image.asset(
-                'assets/images/Exercise_example_video.png',
+              Image.network(
+                widget.videourl,
               ),
               const SizedBox(height: 15),
               Text(
@@ -55,7 +66,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               Text(
-                description,
+                widget.description,
                 style: GoogleFonts.poppins(
                     color: Colors.white,
                     fontSize: 15,
@@ -71,7 +82,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               Text(
-                howto,
+                widget.howto,
                 style: GoogleFonts.poppins(
                     color: Colors.white,
                     fontSize: 15,

@@ -9,6 +9,7 @@ part of 'cardio.dart';
 Cardio _$CardioFromJson(Map<String, dynamic> json) => Cardio(
       json['howto'] as String,
       json['description'] as String,
+      json['videourl'] as String,
       title: json['title'] as String,
     );
 
@@ -16,4 +17,5 @@ Map<String, dynamic> _$CardioToJson(Cardio instance) => <String, dynamic>{
       'title': instance.title,
       'howto': instance.howto,
       'description': instance.description,
+      'videourl': instance.videourl,
     };
