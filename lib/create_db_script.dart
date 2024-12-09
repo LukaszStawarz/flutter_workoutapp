@@ -136,7 +136,7 @@ final Map<String, dynamic> originalData = {
   ],
   "wk_ex4": [
     "Child’s Pose",
-    "Cat-Cow Stretch",
+    "Cat-Cow Stretch", //Stretch na Pose >>>>>>>>>>>>
     "Downward Dog",
     "Warrior II",
     "Corpse Pose",

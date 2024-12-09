@@ -1,3 +1,4 @@
+import 'package:gymapp/models/exercises.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subplan.g.dart';
@@ -19,7 +20,8 @@ class SubPlan {
     required this.time,
     required this.description,
   });
-
+  // List<Exercises> get exerciseObjects =>
+  //     exercises.map((e) => Exercises.fromJson(e)).toList();
   factory SubPlan.fromJson(Map<String, dynamic> json) =>
       _$SubPlanFromJson(json);
 

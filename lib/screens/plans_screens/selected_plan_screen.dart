@@ -51,7 +51,6 @@ class WorkoutPlanWidget extends StatelessWidget {
 
   final SubPlan subplan;
   final String planId;
-
   @override
   Widget build(BuildContext context) {
     return Container(

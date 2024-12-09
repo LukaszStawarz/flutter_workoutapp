@@ -2,8 +2,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/models/subplan.dart';
+import 'package:gymapp/models/exercises.dart';
 import 'package:gymapp/models/user_exercise.dart';
+import 'package:gymapp/providers/exercise_provider.dart';
 import 'package:gymapp/providers/user_exercise_provider.dart';
+import 'package:gymapp/screens/plans_screens/plan_details.dart';
 import 'package:provider/provider.dart';
 
 class StartedPlanScreen extends StatefulWidget {
@@ -21,6 +24,13 @@ class StartedPlanScreen extends StatefulWidget {
 class _StartedPlanScreenState extends State<StartedPlanScreen> {
   int indexOfCurrentExercise = 0;
   bool _isCompleted = false;
+  late final List<Exercises> exercises;
+  @override
+  void initState() {
+    exercises = context.read<ExerciseProvider>().exercisesList;
+
+    super.initState();
+  }
 
   void _skipExercise() {
     context.read<UserExerciseProvider>().endSubExercise(
@@ -144,17 +154,12 @@ class _StartedPlanScreenState extends State<StartedPlanScreen> {
             height: 20,
           ),
           Container(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            width: 370,
-            height: 300,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              image: DecorationImage(
-                image: NetworkImage(widget.plan.image),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              width: 370,
+              height: 300,
+              child: Image.network(
+                  getExercises(widget.plan.exercises[indexOfCurrentExercise])
+                      .videourl)),
           const SizedBox(
             height: 200,
           ),
@@ -204,6 +209,12 @@ class _StartedPlanScreenState extends State<StartedPlanScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  Exercises getExercises(String id) {
+    return exercises.firstWhere(
+      (element) => element.id == id,
     );
   }
 }

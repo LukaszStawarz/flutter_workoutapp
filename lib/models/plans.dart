@@ -54,7 +54,7 @@ class Plan {
   final String title;
   final String dashboardImageUrl;
   final List<SubPlan> subplan;
-  final String id;
+  String id;
 
   Plan({
     required this.title,

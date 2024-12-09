@@ -86,22 +86,24 @@ class ExerciseScreen extends StatelessWidget {
                                 ...breathing
                                     .map(
                                       (e) => ListComponent(
-                                          onclick: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ExerciseDetailsScreen(
-                                                  title: e.title,
-                                                  description: e.description,
-                                                  howto: e.howto,
-                                                  videourl: e.videourl,
-                                                  exercises: breathing,
-                                                ),
+                                        onclick: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ExerciseDetailsScreen(
+                                                title: e.title,
+                                                description: e.description,
+                                                howto: e.howto,
+                                                videourl: e.videourl,
+                                                exercises: breathing,
                                               ),
-                                            );
-                                          },
-                                          name: e.title),
+                                            ),
+                                          );
+                                        },
+                                        name: e.title,
+                                        videourl: e.videourl,
+                                      ),
                                     )
                                     .toList()
                                   ..sort(
@@ -136,22 +138,24 @@ class ExerciseScreen extends StatelessWidget {
                                 ...cardio
                                     .map(
                                       (e) => ListComponent(
-                                          onclick: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ExerciseDetailsScreen(
-                                                  title: e.title,
-                                                  description: e.description,
-                                                  howto: e.howto,
-                                                  videourl: e.videourl,
-                                                  exercises: cardio,
-                                                ),
+                                        onclick: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ExerciseDetailsScreen(
+                                                title: e.title,
+                                                description: e.description,
+                                                howto: e.howto,
+                                                videourl: e.videourl,
+                                                exercises: cardio,
                                               ),
-                                            );
-                                          },
-                                          name: e.title),
+                                            ),
+                                          );
+                                        },
+                                        name: e.title,
+                                        videourl: e.videourl,
+                                      ),
                                     )
                                     .toList()
                                   ..sort(((a, b) => a.name.compareTo(b.name))),
@@ -184,22 +188,24 @@ class ExerciseScreen extends StatelessWidget {
                                 ...strength
                                     .map(
                                       (e) => ListComponent(
-                                          onclick: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ExerciseDetailsScreen(
-                                                  title: e.title,
-                                                  description: e.description,
-                                                  howto: e.howto,
-                                                  videourl: e.videourl,
-                                                  exercises: strength,
-                                                ),
+                                        onclick: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ExerciseDetailsScreen(
+                                                title: e.title,
+                                                description: e.description,
+                                                howto: e.howto,
+                                                videourl: e.videourl,
+                                                exercises: strength,
                                               ),
-                                            );
-                                          },
-                                          name: e.title),
+                                            ),
+                                          );
+                                        },
+                                        name: e.title,
+                                        videourl: e.videourl,
+                                      ),
                                     )
                                     .toList()
                                   ..sort(((a, b) => a.name.compareTo(b.name))),
@@ -232,22 +238,24 @@ class ExerciseScreen extends StatelessWidget {
                                 ...warmup
                                     .map(
                                       (e) => ListComponent(
-                                          onclick: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ExerciseDetailsScreen(
-                                                  title: e.title,
-                                                  description: e.description,
-                                                  howto: e.howto,
-                                                  videourl: e.videourl,
-                                                  exercises: warmup,
-                                                ),
+                                        onclick: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ExerciseDetailsScreen(
+                                                title: e.title,
+                                                description: e.description,
+                                                howto: e.howto,
+                                                videourl: e.videourl,
+                                                exercises: warmup,
                                               ),
-                                            );
-                                          },
-                                          name: e.title),
+                                            ),
+                                          );
+                                        },
+                                        name: e.title,
+                                        videourl: e.videourl,
+                                      ),
                                     )
                                     .toList()
                                   ..sort(((a, b) => a.name.compareTo(b.name))),
@@ -280,22 +288,24 @@ class ExerciseScreen extends StatelessWidget {
                                 ...yoga
                                     .map(
                                       (e) => ListComponent(
-                                          onclick: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ExerciseDetailsScreen(
-                                                  title: e.title,
-                                                  description: e.description,
-                                                  howto: e.howto,
-                                                  videourl: e.videourl,
-                                                  exercises: yoga,
-                                                ),
+                                        onclick: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ExerciseDetailsScreen(
+                                                title: e.title,
+                                                description: e.description,
+                                                howto: e.howto,
+                                                videourl: e.videourl,
+                                                exercises: yoga,
                                               ),
-                                            );
-                                          },
-                                          name: e.title),
+                                            ),
+                                          );
+                                        },
+                                        name: e.title,
+                                        videourl: e.videourl,
+                                      ),
                                     )
                                     .toList()
                                   ..sort(((a, b) => a.name.compareTo(b.name))),
@@ -321,10 +331,12 @@ class ListComponent extends StatefulWidget {
     super.key,
     required this.onclick,
     required this.name,
+    required this.videourl,
   });
 
   final Function() onclick;
   final String name;
+  final String videourl;
 
   @override
   State<ListComponent> createState() => _ListComponentState();
@@ -344,7 +356,22 @@ class _ListComponentState extends State<ListComponent> {
         },
         child: Row(
           children: [
-            Image.asset('assets/images/Exercise_example_image.png'),
+            SizedBox(
+              height: 40,
+              width: 60,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.network(
+                  widget.videourl,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            // Image.network(
+            //   widget.videourl,
+            //   height: 40,
+            //   width: 60,
+            // ),
             const SizedBox(
               width: 20,
             ),

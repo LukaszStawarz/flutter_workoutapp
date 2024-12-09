@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gymapp/models/exercises.dart';
 import 'package:gymapp/models/subplan.dart';
+import 'package:gymapp/models/user_plan.dart';
 import 'package:gymapp/providers/exercise_provider.dart';
 import 'package:gymapp/providers/user_exercise_provider.dart';
 import 'package:gymapp/screens/plans_screens/started_plan_screen.dart';
@@ -16,6 +17,7 @@ class PlanDetailsScreen extends StatelessWidget {
   });
 
   final SubPlan subplan;
+  //final UserPlan userPlan;
   final String planId;
 
   @override

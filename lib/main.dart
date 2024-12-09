@@ -7,6 +7,7 @@ import 'package:gymapp/providers/plans_provider.dart';
 import 'package:gymapp/providers/user_data_getter_provider.dart';
 import 'package:gymapp/providers/user_data_provider.dart';
 import 'package:gymapp/providers/user_exercise_provider.dart';
+import 'package:gymapp/providers/user_plan_create_provider.dart';
 import 'package:gymapp/providers/user_workout_provider.dart';
 import 'package:gymapp/screens/login/log_in_screen.dart';
 import 'package:gymapp/screens/login/sign_up_details_screen.dart';
@@ -34,7 +35,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  setup();
+  //setup();
   runApp(const GymApp());
 }
 
@@ -62,25 +63,28 @@ class GymApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => UserWorkoutProvider(),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (_) => UserPlanCreateProvider(),
+        ),
       ],
       child: MaterialApp(
-        theme: ThemeData(
-          scaffoldBackgroundColor: const Color.fromRGBO(42, 44, 56, 1),
-          colorScheme:
-              const ColorScheme.dark().copyWith(background: Colors.red),
-        ),
-        home: //const MainScreenWidget(),
-            //SignUpScreen(),
-            LogInScreen(),
-        //CreatePlanScreen(),
+          theme: ThemeData(
+            scaffoldBackgroundColor: const Color.fromRGBO(42, 44, 56, 1),
+            colorScheme:
+                const ColorScheme.dark().copyWith(background: Colors.red),
+          ),
+          home: //const MainScreenWidget(),
+              //SignUpScreen(),
+              //LogInScreen(),
+              //CreatePlanScreen(),
 
-        //SuDetailsScreen2(),
-        //const SignUpDetailsScreen(),
-        //const HomeScreenWidget()
-        //PlanScreen(),
-        //HistoryScreen(),
-      ),
+              //SuDetailsScreen2(),
+              //const SignUpDetailsScreen(),
+              const HomeScreenWidget()
+          //PlanScreen(),
+          //HistoryScreen(),
+          ),
     );
   }
 }
